@@ -14,7 +14,7 @@ p {
 }
 
 a {
-  color: #ff0000;
+  color: #118a04;
 }
 
 a:hover {
@@ -22,7 +22,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #ff0000 !important;
+  color: #118a04 !important;
 }
 
 h1,
@@ -93,13 +93,13 @@ img::-moz-selection {
 }
 
 .btn-primary {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #118a04;
+  border-color: #118a04;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #fec810 !important;
-  border-color: #fec810 !important;
+  background-color: #118a04 !important;
+  border-color: #118a04 !important;
   color: white;
 }
 
@@ -118,7 +118,7 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #fed136;
+  background-color: #118a04;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
@@ -128,7 +128,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #fec503;
+  color: #118a04;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -173,7 +173,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/covid-19-main-header.jpg");
+  background-image: url("../img/covid-19-main-header.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

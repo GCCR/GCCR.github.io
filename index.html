@@ -269,9 +269,9 @@
   <section class="page-section" id="members">
     <div class="container">
         <div class="col-lg-12 text-center">
-          <object data="https://raw.githubusercontent.com/GCCR/members-map/master/members-map.html" type="text/html" style="width: 100%; height: 580px;">
-            Sorry, Your browser isn't able to display the map. Maybe try Chrome or contact us to let us know we need to fix it!
-          </object>
+          <iframe id="members_map" frameBorder="0" style="width: 100%; height: 580px;">
+            Sorry, Your browser isn't able to display our member's map. Maybe try Chrome/Firefox or contact us to let us know we need to fix it!
+          </iframe>
         </div>
       </div>
   </section>
@@ -615,6 +615,9 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
+
+  <!-- Load members map -->
+  <script src="js/load_map.js"></script>
 
 </body>
 

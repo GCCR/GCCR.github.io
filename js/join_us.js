@@ -1,6 +1,6 @@
 $(function() {
 
-  $("#joinForm input,#joinForm textarea").jqBootstrapValidation({
+  $("#joinForm input,#joinForm select").jqBootstrapValidation({
     preventSubmit: true,
     submitError: function($form, event, errors) {
       // additional error messages or events
@@ -11,16 +11,16 @@ $(function() {
       var date = new Date.now();
       var timestamp = (date.getDate() + '/' + date.getMonth()+1) + '/' +  date.getFullYear();
       // get values from FORM
-      var name = $("input#name").val();
-      var institution = $("input#institution").val();
-      var country = $("select#country").val();
-      var agreement = $("input#agreement").is(":checked");
+      var name = $("input#ms_name").val();
+      var institution = $("input#ms_institution").val();
+      var country = $("select#ms_country").val();
+      var agreement = $("input#ms_agreement").is(":checked");
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
       if (firstName.indexOf(' ') >= 0) {
         firstName = name.split(' ').slice(0, -1).join(' ');
       }
-      $this = $("#sendFormButton");
+      $this = $("#joinFormButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
         url: "././mail/join_us.php",
@@ -35,23 +35,23 @@ $(function() {
         cache: false,
         success: function() {
           // Success message
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          $('#ms_success').html("<div class='alert alert-success'>");
+          $('#ms_success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#success > .alert-success')
+          $('#ms_success > .alert-success')
             .append("<strong>Your membership form has been submitted and will be processed shortly. </strong>");
-          $('#success > .alert-success')
+          $('#ms_success > .alert-success')
             .append('</div>');
           //clear all fields
           $('#joinForm').trigger("reset");
         },
         error: function() {
           // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          $('#ms_success').html("<div class='alert alert-danger'>");
+          $('#ms_success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append('</div>');
+          $('#ms_success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!"));
+          $('#ms_success > .alert-danger').append('</div>');
           //clear all fields
           $('#joinForm').trigger("reset");
         },
@@ -74,6 +74,6 @@ $(function() {
 });
 
 /*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-  $('#success').html('');
+$('#ms_name').focus(function() {
+  $('#ms_success').html('');
 });

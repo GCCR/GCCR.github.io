@@ -34,32 +34,27 @@
     </script>
     
     <!-- Server side includes alternative for a static website-->
+    <!-- From the awesome W3 folks and https://stackoverflow.com/a/38037444 -->
     <script>
-function w3IncludeHTML() {
-  var z, i, a, file, xhttp;
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    if (z[i].getAttribute("w3-include-html")) {
-      a = z[i].cloneNode(false);
-      file = z[i].getAttribute("w3-include-html");
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-          a.removeAttribute("w3-include-html");
-          a.innerHTML = xhttp.responseText;
-
-          z[i].parentNode.replaceChild(a, z[i]);
-          w3IncludeHTML();
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
-    }
-  }
-}
-</script>
-
+        function w3IncludeHTML() {
+          var z, i, a, file, xhttp;
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            if (z[i].getAttribute("w3-include-html")) {
+              a = z[i].cloneNode(false);
+              file = z[i].getAttribute("w3-include-html");
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                  a.removeAttribute("w3-include-html");
+                  a.innerHTML = xhttp.responseText;
+                  z[i].parentNode.replaceChild(a, z[i]);
+                  w3IncludeHTML();}}      
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              return;
+            }}}
+        </script>
 </head>
 
 <body id="page-top">
@@ -110,21 +105,74 @@ function w3IncludeHTML() {
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Our Amazing People</h2>
           <h3 class="section-subheading text-muted">The Global Consortium of Chemosensory Researchers (GCCR), consists of open-science contributors: transdisciplinary scientists, clinicians, and patient advocates from all over the world.</h3>
-          <hr>
-          <h3> Leadership team </h3>
-            <p class="text-muted"> The leadership team is responsible for facilitating communication within the GCCR, organizing the GCCR meetings and coordinating the group’s efforts. The leadership committee is composed of a Chair and members, currently (in alphabetical order): John Hayes; Thomas Hummel; Christine Kelly; Steven Munger; Masha Niv; Kathrin Ohla; Valentina Parma (chair); Danielle R. Reed; Maria Veldhuizen. </p>
-            
-           <hr>
-           <h3> Our Members</h3>
-            <!-- Load members table (Should just move to Jekyll) -->
-            <div w3-include-html="listOMems.html"></div>
-            <script>
-            w3IncludeHTML();
-            </script>
+          
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Leadership team
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                        <p class="text-muted"> The leadership team is responsible for facilitating communication within the GCCR, organizing the GCCR meetings and coordinating the group’s efforts. The leadership committee is composed of a Chair and members, currently (in alphabetical order): John Hayes; Thomas Hummel; Christine Kelly; Steven Munger; Masha Niv; Kathrin Ohla; Valentina Parma (chair); Danielle R. Reed; Maria Veldhuizen. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Our Members
+                      </button>
+                  </h2>
+                </div>
+                  
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <h3> </h3>
+                        <!-- Load members table (Should just move to Jekyll) -->
+                        <div w3-include-html="listOMems.html"></div>
+                        <script> w3IncludeHTML();</script>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
         </div>
       </div>
     </div>
   </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
   <!-- About -->

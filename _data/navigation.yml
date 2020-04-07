@@ -1,0 +1,14 @@
+- name: Home
+  link: /
+- name: COVID-19 Projects
+  link: /projects/
+- name: News
+  link: /news/
+- name: Links
+  link: /links/
+- name: Members
+  link : /members/
+- name: Join
+  link: /join/
+- name: Contact
+  link: "#contact"

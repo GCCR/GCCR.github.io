@@ -1,0 +1,91 @@
+---
+title: News
+---
+<section class="page-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Latest news</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- News posts -->
+        {% for post in paginator.posts %}
+        <div class="card mb-4 mx-4">
+          {% if post.img %}
+          <img class="card-img-top" src="{{ post.img }}" alt="Card image cap">
+          {% endif %}
+          <div class="card-body">
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p class="card-text">{{ post.excerpt }}</p>
+            <a href="{{ post.url }}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on
+              {% assign d = post.date | date: "%-d"  %}
+              {{ post.date | date: "%B" }}
+              {% case d %}
+                {% when '1' or '21' or '31' %}{{ d }}st
+                {% when '2' or '22' %}{{ d }}nd
+                {% when '3' or '23' %}{{ d }}rd
+                {% else %}{{ d }}th
+                {% endcase %},
+              {{ post.date | date: "%Y" }}
+              {% assign author = site.data.authors[post.author] %}
+              {% if author %}
+              by {{ author.name }}
+              {% else %}
+              by {{ post.author }}
+              {% endif %}
+          </div>
+        </div>
+        {% else %}
+        <p>There's nothing here, yet.</p>
+        {% endfor %}
+
+        <!-- Pagination -->
+        {% if paginator.total_pages > 1 %}
+        <ul class="pagination justify-content-center mb-4">
+          {% if paginator.previous_page %}
+          <li class="page-item">
+            <a href="{{ paginator.previous_page_path }}" class="page-link">
+          {% else %}
+          <li class="page-item disabled">
+            <a href="#" class="page-link">
+          {% endif %}
+              &laquo; Newer
+            </a>
+          </li>
+          {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+          <li class="page-item active">
+            <span class="page-link">{{ page }}</span>
+          {% elsif page == 1 %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+          {% else %}
+          <li class="page-item">
+            <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+          {% endif %}
+          </li>
+          {% endfor %}
+          {% if paginator.next_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path }}">
+          {% else %}
+          <li class="page-item disabled">
+            <a href="#" class="page-link">
+            {% endif %}
+              Older &raquo;
+            </a>
+          </li>
+        </ul>
+        {% endif %}
+           
+      </div>
+    </div>
+  </div>
+</section>

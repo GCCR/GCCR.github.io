@@ -1,12 +1,12 @@
-Website for the [GCCR](https://GCCR.github.io)
+# ~ Official website of the [GCCR](https://GCCR.github.io) ~
 
-# Contributing to the website
+## Contributing to the website
 
-## For authors
+### *For authors*
 
-Coming soon
+Coming soon!
 
-## For developers
+### *For developers*
 
 1. **Setting up the environment**
 
@@ -29,6 +29,14 @@ You might need to update Ruby Gems and the bundler:
 sudo gem update --system
 bundle update --bundler
 ```
+For MacOS:
+```shell
+Comming soon!
+```
+For PC:
+```shell
+Comming soon!
+```
 
 2. **Cloning the repository**
 ```shell
@@ -40,7 +48,11 @@ Modifications on this branch will directly affect the website so push commits on
 
 The `dev` branch. When making changes, you should push your commits to this branch first, and then merge it with the master branch.
 
-To switch between branches, use the `git checkout` command. To identify which branch you're working on, use `git branch`. To push your changes from `dev` to remote (GitHub) `dev` branch, use `git push -u origin dev`. Then you can merge `dev` to `master` through the GitHub interface.
+* To switch between branches, use the `git checkout` command. 
+* To identify which branch you're working on, use `git branch`. 
+* To push your changes from `dev` to remote (GitHub) `dev` branch, use `git push -u origin dev`. 
+
+Then the admin's will merge `dev` to `master` through the GitHub interface.
 
 3. **Running the website locally**
 

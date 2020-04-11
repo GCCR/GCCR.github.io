@@ -1,0 +1,8 @@
+{% assign ordered_links = site.data.survey-links | sort: "language" %}
+{% for item in ordered_links %}
+  {% assign remainder = forloop.index0 | modulo: 3 %}
+  {% if remainder == 0 %}
+  <div class="w-100 pb-1"></div>
+  {% endif %}
+  <a href="{{ item.url }}" target="_blank" class="btn btn-primary text-uppercase" type="submit">{{ item.language }}</a>
+{% endfor %}

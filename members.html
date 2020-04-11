@@ -20,7 +20,11 @@ title: Members
 
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                      <p class="text-muted"> The leadership team is responsible for facilitating communication within the GCCR, organizing the GCCR meetings and coordinating the group’s efforts. The leadership committee is composed of a Chair and members, currently (in alphabetical order): John Hayes; Thomas Hummel; Christine Kelly; Steven Munger; Masha Niv; Kathrin Ohla; Valentina Parma (chair); Danielle R. Reed; Maria Veldhuizen. </p>
+                      <p class="text-muted">
+                        The leadership team is responsible for facilitating communication within the GCCR, organizing the GCCR meetings and coordinating the group’s efforts.
+                        The leadership committee is composed of a Chair and members, currently (in alphabetical order):
+                        <a href="https://foodscience.psu.edu/directory/jeh40">John Hayes</a>; Thomas Hummel; Christine Kelly; Steven Munger; Masha Niv; Kathrin Ohla; <a href="https://vparma.netlify.com/">Valentina Parma</a> (chair); Danielle R. Reed; Maria Veldhuizen.
+                      </p>
                 </div>
               </div>
             </div>
@@ -50,7 +54,14 @@ title: Members
                       </thead>
                       <tbody>
                         {% for item in site.data.members %}
-                        <tr><td>{{ item.name }}</td><td>{{ item.institution }}</td><td>{{ item.country }}</td></tr>
+                        <tr>
+                          {% if item.url %}
+                          <td><a href="{{ item.url }}">{{ item.name }}</a></td>
+                          {% else %}
+                          <td>{{ item.name }}</td>
+                          {% endif %}
+                          <td>{{ item.institution }}</td><td>{{ item.country }}</td>
+                        </tr>
                         {% endfor %}
                       </tbody>
                     </table>

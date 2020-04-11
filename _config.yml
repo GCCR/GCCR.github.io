@@ -2,7 +2,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
-
+# default front-matter
 defaults:
   - scope:
       path: ""
@@ -10,6 +10,7 @@ defaults:
     values:
       layout: "post"
       author: gccr
+      permalink: /news/:year/:month/:day/:title
   - scope:
       path: ""
     values:
@@ -19,11 +20,12 @@ defaults:
       path: "assets/"
     values:
       sitemap: false
-
+# blog pages
 paginate: 5
 paginate_path: "/news/page:num/"
-
+# google analytics
 google_analytics: UA-162429198-1
+# seo
 title: GCCR
 description: Website of the Global Consortium for Chemosensory Research
 url: https://gcchemosensr.org/
@@ -32,6 +34,8 @@ logo: /assets/img/logo_32x32.jpg
 twitter:
   username: GCChemosensoryR
   card: summary
+facebook:
+  publisher: https://www.facebook.com/GCChemosensoryR/
 social:
   name: Global Consortium for Chemosensory Research
   links:

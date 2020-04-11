@@ -95,6 +95,7 @@ img::-moz-selection {
 .btn-primary {
   background-color: #118a04;
   border-color: #118a04;
+  -webkit-appearance: none;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {

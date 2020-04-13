@@ -11,7 +11,7 @@ from bokeh.io import output_file, save, export_png
 from bokeh.plotting import figure
 from bokeh.models import (
     GeoJSONDataSource, ColumnDataSource, HoverTool, ColorBar, WheelZoomTool,
-    LinearColorMapper, CategoricalColorMapper, Legend, LegendItem, Label,
+    LinearColorMapper, CategoricalColorMapper, Legend, LegendItem, Title,
 )
 
 # search for the excel file
@@ -114,11 +114,11 @@ Country names used by natural-earth-vector:
 # create the map
 output_file("../assets/html/members-map.html", title="GCCR members", mode="inline")
 p = figure(
+    height=550, width=950,
     title="Members of the Global Consortium for Chemosensory Research",
-    plot_height=550, plot_width=950,
     toolbar_location=None, tools="pan", toolbar_sticky=False,
 )
-p.title.text_font_size = '16pt'
+p.title.text_font_size = '15pt'
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None
 p.axis.visible = False
@@ -158,19 +158,20 @@ legend = Legend(border_line_width=0, spacing=20, items=[
 ], location="center_left", orientation="horizontal", title="Number of members")
 p.add_layout(legend, "below")
 # date of update
-last_update = Label(
-    x=730, y=70, x_units="screen", y_units="screen",
-    text=f"Last update: {datetime.now().strftime('%d %b %Y')}"
+last_update = Title(
+    text=f"Last update: {datetime.now().strftime('%d %b %Y')}",
+    text_font_size='10pt'
 )
 p.add_layout(last_update, "below")
 # export to png (might fail)
 try:
-	export_png(p, filename="../assets/img/members-map.png", width=950, height=550)
+	export_png(p, filename="../assets/img/members-map.png", width=950, height=600)
 except Exception as e:
 	print("Could not create a PNG of the map. Check the error below:")
 	print(e)
-finally:
-	save(p)
+# export HTML
+p.sizing_mode = "scale_width"
+save(p)
 
 # standardize institution names for the YML
 def standardize(x):

@@ -67,7 +67,9 @@ countries_dict = {
 members["Country"] = members["Country"].apply(lambda x: countries_dict.get(x, x))
 
 # capitalize names
-members["Member"] = members["Member"].apply(lambda s: s.title())
+def capitalize(x):
+    return "".join(i.title() for i in re.split(r'(Ma?c)[A-Z]', x))
+members["Member"] = members["Member"].apply(capitalize)
 
 # check for duplicates
 duplicates = members.loc[members.duplicated(subset="Member", keep=False)]

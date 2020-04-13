@@ -9,12 +9,14 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: gccr
+      author: GCCR
       permalink: /news/:year/:month/:day/:title
+      type: NewsArticle
   - scope:
       path: ""
     values:
       layout: "default"
+      type: Organization
       image: /assets/img/logo_400x400.jpg
   - scope:
       path: "assets/"
@@ -26,11 +28,12 @@ paginate_path: "/news/page:num/"
 # google analytics
 google_analytics: UA-162429198-1
 # seo
-title: GCCR
-description: Website of the Global Consortium for Chemosensory Research
+title: Global Consortium for Chemosensory Research (GCCR)
+description: Website of the Global Consortium for Chemosensory Research (GCCR)
 url: https://gcchemosensr.org/
-author: gccr
+lang: en_US
 logo: /assets/img/logo_32x32.jpg
+author: GCCR
 twitter:
   username: GCChemosensoryR
   card: summary

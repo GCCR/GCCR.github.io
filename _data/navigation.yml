@@ -1,10 +1,10 @@
 - name: COVID-19 Projects
-  link: /projects/
+  link: /projects.html
 - name: Links
-  link: /links/
+  link: /links.html
 - name: Members
-  link : /members/
+  link : /members.html
 - name: Join
-  link: /join/
+  link: /join.html
 - name: Contact
   link: "#contact"

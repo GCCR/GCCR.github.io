@@ -3,6 +3,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 # default front-matter
+permalink: pretty
 defaults:
   - scope:
       path: ""
@@ -30,7 +31,7 @@ google_analytics: UA-162429198-1
 # seo
 title: Global Consortium for Chemosensory Research (GCCR)
 description: Website of the Global Consortium for Chemosensory Research (GCCR)
-url: https://gcchemosensr.org/
+url: https://gcchemosensr.org
 lang: en_US
 logo: /assets/img/logo_32x32.jpg
 author: GCCR
@@ -38,10 +39,10 @@ twitter:
   username: GCChemosensoryR
   card: summary
 facebook:
-  publisher: https://www.facebook.com/GCChemosensoryR/
+  publisher: https://www.facebook.com/GCChemosensoryR
 social:
   name: Global Consortium for Chemosensory Research
   links:
     - https://twitter.com/GCChemosensoryR
     - https://github.com/GCCR
-    - https://www.facebook.com/GCChemosensoryR/
+    - https://www.facebook.com/GCChemosensoryR

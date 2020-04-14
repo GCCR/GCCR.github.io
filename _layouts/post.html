@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<section class="page-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ page.title }}</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        
+        <h3>{{ page.date | date_to_string }}</h3>
+        {% assign gccr = site.data.authors['GCCR'] %}
+        {% assign author = site.data.authors[page.author] %}
+        {% if author %}
+          {% assign author_name = author.name %}
+          {% if author.img %}
+            {% assign avatar = author.img %}
+          {% else %}
+            {% assign avatar = gccr.img %}
+          {% endif %}
+          {% if author.twitter %}
+            {% capture link %}https://twitter.com/{{ author.twitter }}{% endcapture %}
+          {% else %}
+          {% capture link %}https://twitter.com/{{ gccr.twitter }}{% endcapture %}
+          {% endif %}
+        {% else %}
+          {% assign author_name = page.author %}
+          {% assign avatar = gccr.img %}
+          {% capture link %}https://twitter.com/{{ gccr.twitter }}{% endcapture %}
+        {% endif %}
+        <p class="pb-3">
+          <img src="{{ avatar }}" alt="{{ author_name }}'s avatar" style="height: 60px; border-radius: 50%;"/>
+          <a href="{{ link }}">{{ author_name }}</a>
+        </p>
+          
+        {{ content }}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Navigate through posts -->
+<ul class="pagination justify-content-center">
+  {% if page.previous.url %}
+  <li class="page-item">
+    <a class="page-link" href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+    <span class="page-link">You've reached the first post</span>
+  </li>
+  {% endif %}
+  {% if page.next.url %}
+  <li class="page-item">
+    <a class="page-link" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+    <span class="page-link">You've reached the latest post</span>
+  </li>
+  {% endif %}
+</ul>

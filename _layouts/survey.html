@@ -1,0 +1,21 @@
+---
+layout: barebone
+---
+
+<!-- Survey box -->
+<section class="page-section" id="intro">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">{{ page.help_us }}</h2>
+
+              {{ content }}
+              
+              <a href="{{ page.survey_url }}" target="_blank" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.take_survey }}</a>
+              
+              <a href="{{ page.share_url }}" target="_blank" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.share_survey }}</a>
+              
+          </div>
+      </div>
+  </div>
+</section>

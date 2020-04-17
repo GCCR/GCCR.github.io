@@ -1,0 +1,46 @@
+---
+title: GCCR surveys
+description: Take the GCCR survey!
+layout: barebone
+---
+
+<script>
+        var example = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'こんにちは！    言語を選択してください '];
+
+        textSequence(0);
+        function textSequence(i) {
+
+            if (example.length > i) {
+                setTimeout(function() {
+                    document.getElementById("sequence").innerHTML = example[i];
+                    textSequence(++i);
+                }, 1500); // 1.5 second (in milliseconds)
+
+            } else if (example.length == i) { // Loop
+                textSequence(0);
+            }
+
+        }
+    </script>
+
+
+<!-- Survey box -->
+<section class="page-section" id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h3 class="section-heading text-uppercase"><div id="sequence"></div></h3>
+        <p class="text-muted">The GCCR is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
+        <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
+        
+        {% for survey in site.surveys %}
+        <div class="container">
+          <a lang="{{ survey.lang }}" href="{{ survey.url }}" target="_blank" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.language }}</a>
+          <div class="w-100 pb-1"></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Take Survey -->

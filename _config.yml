@@ -15,6 +15,13 @@ defaults:
       type: NewsArticle
   - scope:
       path: ""
+      type: "surveys"
+    values:
+      layout: "survey"
+      permalink: /surveys/:name/
+      type: 
+  - scope:
+      path: ""
     values:
       layout: "default"
       type: Organization
@@ -26,6 +33,11 @@ defaults:
 # blog pages
 paginate: 5
 paginate_path: "/news/page:num/"
+# surveys
+collections:
+  surveys:
+    output: true
+    sort_by: language
 # google analytics
 google_analytics: UA-162429198-1
 # seo

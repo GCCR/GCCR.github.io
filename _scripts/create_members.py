@@ -127,7 +127,7 @@ hover = HoverTool(
     tooltips=[
         ('Country', '@Country'),
         ('Number of members','@N_members'),
-        ('Members','@Members{safe}'),
+        #('Members','@Members{safe}'),
     ])
 p.add_tools(hover)
 # Add wheel zoom
@@ -159,7 +159,7 @@ legend = Legend(border_line_width=0, spacing=20, items=[
 p.add_layout(legend, "below")
 # date of update
 last_update = Title(
-    text=f"Last update: {datetime.now().strftime('%d %b %Y')}",
+    text=f"Last update: {datetime.now().strftime('%d %b %Y')} - {len(members)} members in {members['Country'].nunique()} countries",
     text_font_size='10pt'
 )
 p.add_layout(last_update, "below")

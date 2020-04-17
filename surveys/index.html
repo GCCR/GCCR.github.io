@@ -4,38 +4,18 @@ description: Take the GCCR survey!
 layout: barebone
 ---
 
-<script>
-        var example = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'こんにちは！    言語を選択してください '];
-
-        textSequence(0);
-        function textSequence(i) {
-
-            if (example.length > i) {
-                setTimeout(function() {
-                    document.getElementById("sequence").innerHTML = example[i];
-                    textSequence(++i);
-                }, 1500); // 1.5 second (in milliseconds)
-
-            } else if (example.length == i) { // Loop
-                textSequence(0);
-            }
-
-        }
-    </script>
-
-
 <!-- Survey box -->
 <section class="page-section" id="intro">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h3 class="section-heading text-uppercase"><div id="sequence"></div></h3>
-        <p class="text-muted">The GCCR is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
+        <h3 id="sequence" class="section-heading text-uppercase py-5"></h3>
+        <p class="text-muted">The <a href="/" target="_blank">GCCR</a> is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
         <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
-        
+        <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
         {% for survey in site.surveys %}
         <div class="container">
-          <a lang="{{ survey.lang }}" href="{{ survey.url }}" target="_blank" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.language }}</a>
+          <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.language }}</a>
           <div class="w-100 pb-1"></div>
         </div>
         {% endfor %}
@@ -44,3 +24,23 @@ layout: barebone
   </div>
 </section>
 <!-- Take Survey -->
+
+<script>
+  var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner une langue', 'こんにちは！ 言語を選択してください'];
+  var index = 1;
+  document.getElementById('sequence').innerHTML = textArray[0];
+  setInterval(function(){        
+    $("#sequence").animate({
+      opacity:0
+    }, function() {
+      if (textArray.length > index) {
+        $(this).text(textArray[index]).animate({opacity:1});
+        index++; 
+      }
+      else {
+        $(this).text(textArray[0]).animate({opacity:1});
+        index = 1;
+      }
+    });
+  }, 1800);
+</script>

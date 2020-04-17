@@ -5,17 +5,35 @@ layout: barebone
 <!-- Survey box -->
 <section class="page-section" id="intro">
   <div class="container">
-      <div class="row">
-          <div class="col-lg-12 text-center">
-              <h2 class="section-heading text-uppercase">{{ page.help_us }}</h2>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">{{ page.help_us }}</h2>
 
-              {{ content }}
-              
-              <a href="{{ page.survey_url }}" target="_blank" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.take_survey }}</a>
-              
-              <a href="{{ page.share_url }}" target="_blank" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.share_survey }}</a>
-              
-          </div>
+        {{ content }}
+
+        <a href="{{ page.survey_url }}" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.take_survey }}</a>
+
+        <button id="share" class="btn btn-xl btn-primary text-uppercase" type="button">{{ page.share_survey }}</a>
+
       </div>
+      <div class="py-5 col-lg-12 text-right">
+        <a href="/surveys/">← Back to language selection</a>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  $(document).ready(function(){
+    $('body').popover({
+      title: "Share via",
+      selector: "#share",
+      placement: "bottom",
+      html: true,
+      content: '\
+        <a href="https://twitter.com/share?url={{ page.short_url }}&amp;text={{ page.description | url_encore }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=@GCChemosensoryR">Tweet</a>' +
+        '' // add facebook, linkedin, whatsapp, and "copy to clipboard"
+        // based on https://simplesharebuttons.com/html-share-buttons/
+    });
+  });
+</script>

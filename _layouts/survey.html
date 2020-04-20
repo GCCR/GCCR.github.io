@@ -47,8 +47,8 @@ layout: survey-base
         '<a class="col-2" target="_blank" href="https://twitter.com/share?url={{ page.short_url | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="text-dark fa-2x fab fa-twitter"></i></a>' +
         '<a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ page.short_url | url_encode }}"><i class="text-dark fa-2x fab fa-facebook"></i></a>' +
         '<a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.short_url | url_encode }}"><i class="text-dark fa-2x fab fa-linkedin"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%3A%20{{ page.short_url | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-2x fab fa-whatsapp"></i></a>' +
-        '<a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%3A%20{{ page.short_url | url_encode }}"><i class="text-dark fa-2x fas fa-envelope"></i></a>' +
+        '<a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ page.short_url | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-2x fab fa-whatsapp"></i></a>' +
+        '<a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%0A{{ page.short_url | url_encode }}"><i class="text-dark fa-2x fas fa-envelope"></i></a>' +
       '</div>' +
       'Short link: <a target="_blank" href="{{ page.short_url }}">{{ page.short_url }}</a>'
     });

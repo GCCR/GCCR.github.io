@@ -9,7 +9,7 @@ share_survey: Comparte tu encuesta
 contact: Para más información acerca de este estudio, por favor contacte a Sajidxa Mariño
 leader_email: sajidxarespiralibre@gmail.com
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=c9ea77a5-9207-4670-94d1-7d46a7c2f01f
-short_url: https://bit.ly/
+short_url: https://bit.ly/2XmhMTz
 ---
 El GCCR es un grupo de 600 científicos, clínicos y pacientes abocados a lo largo de 50 países a encontrar respuestas a la pandemia COVID-19. 
 

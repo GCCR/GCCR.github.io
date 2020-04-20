@@ -13,13 +13,15 @@ defaults:
       author: GCCR
       permalink: /news/:year/:month/:day/:title
       type: NewsArticle
+      sitemap:
+        priority: 0.6
   - scope:
       path: ""
       type: "surveys"
     values:
       layout: "survey"
       permalink: /surveys/:name/
-      type: 
+      sitemap: false
   - scope:
       path: ""
     values:

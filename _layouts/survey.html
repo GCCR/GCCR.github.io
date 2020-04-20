@@ -1,5 +1,5 @@
 ---
-layout: barebone
+layout: survey-base
 ---
 
 <!-- Survey box -->
@@ -7,13 +7,15 @@ layout: barebone
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ page.help_us }}</h2>
-
-        {{ content }}
+        <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
 
         <a href="{{ page.survey_url }}" class="btn btn-xl btn-primary text-uppercase" type="submit">{{ page.take_survey }}</a>
+        <button id="share" class="btn btn-xl btn-primary text-uppercase" type="button">{{ page.share_survey }}</button>
+        
+        <div class="w-100 pt-3 pb-5"></div>
+        {{ content }}
 
-        <button id="share" class="btn btn-xl btn-primary text-uppercase" type="button">{{ page.share_survey }}</a>
+        {{ page.contact }} {{ page.language_leader }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a>)
 
       </div>
       <div class="py-5 col-lg-12 text-right">
@@ -40,10 +42,15 @@ layout: barebone
       selector: "#share",
       placement: "bottom",
       html: true,
-      content: '\
-        <a href="https://twitter.com/share?url={{ page.short_url }}&amp;text={{ page.description | url_encore }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=@GCChemosensoryR">Tweet</a>' +
-        '' // add facebook, linkedin, whatsapp, and "copy to clipboard"
-        // based on https://simplesharebuttons.com/html-share-buttons/
+      content: 
+      '<div class="row align-items-center">' +
+        '<a class="col" target="_blank" href="https://twitter.com/share?url={{ page.short_url | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="text-dark fa-lg fab fa-twitter"></i></a>' +
+        '<a class="col" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ page.short_url | url_encode }}"><i class="text-dark fa-lg fab fa-facebook"></i></a>' +
+        '<a class="col" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.short_url | url_encode }}"><i class="text-dark fa-lg fab fa-linkedin"></i></a>' +
+        '<a class="col" target="_blank" href="whatsapp://send?text={{ page.description | url_encode }}%3A%20{{ page.short_url | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-lg fab fa-whatsapp"></i></a>' +
+        '<a class="col" target="_blank" href="mailto:?Subject={{ page.description }}&amp;Body={{ page.take_survey }}%3A%20{{ page.short_url | url_encode }}"><i class="text-dark fa-lg fas fa-envelope"></i></a>' +
+      '</div>' +
+      'Short link: <a target="_blank" href="{{ page.short_url }}">{{ page.short_url }}</a>'
     });
   });
 </script>

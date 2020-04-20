@@ -20,13 +20,6 @@
     {% if site.google_analytics and jekyll.environment == 'production' %}
       {% include google-analytics.html %}
     {% endif %}
-  </head>
-  <body id="page-top">
-    
-    {{ content }}
-
-    {% include footer.html %}
-
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -36,6 +29,12 @@
 
     <!-- Custom scripts for this template -->
     <script src="/assets/js/agency.min.js"></script>
+  </head>
+  <body id="page-top">
+    
+    {{ content }}
+
+    {% include footer.html %}
 
   </body>
 </html>

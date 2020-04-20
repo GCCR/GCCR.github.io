@@ -1,7 +1,7 @@
 ---
 title: GCCR surveys
 description: Take the GCCR survey!
-layout: barebone
+layout: survey-base
 sitemap: false
 ---
 
@@ -16,7 +16,7 @@ sitemap: false
         <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
         {% for survey in site.surveys %}
         <div class="container">
-          <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.language }}</a>
+          <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.title }}</a>
           <div class="w-100 pb-1"></div>
         </div>
         {% endfor %}

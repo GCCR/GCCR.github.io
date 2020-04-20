@@ -48,7 +48,7 @@ layout: survey-base
         '<a class="col" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ page.short_url | url_encode }}"><i class="text-dark fa-lg fab fa-facebook"></i></a>' +
         '<a class="col" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.short_url | url_encode }}"><i class="text-dark fa-lg fab fa-linkedin"></i></a>' +
         '<a class="col" target="_blank" href="whatsapp://send?text={{ page.description | url_encode }}%3A%20{{ page.short_url | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-lg fab fa-whatsapp"></i></a>' +
-        '<a class="col" target="_blank" href="mailto:?Subject={{ page.description }}&amp;Body={{ page.take_survey }}%3A%20{{ page.short_url | url_encode }}"><i class="text-dark fa-lg fas fa-envelope"></i></a>' +
+        '<a class="col" target="_blank" href="mailto:?Subject={{ page.description }}&amp;Body={{ page.take_survey | escape }}%3A%20{{ page.short_url | url_encode }}"><i class="text-dark fa-lg fas fa-envelope"></i></a>' +
       '</div>' +
       'Short link: <a target="_blank" href="{{ page.short_url }}">{{ page.short_url }}</a>'
     });

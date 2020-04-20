@@ -6,8 +6,7 @@ language: French
 hello: Bonjour!
 take_survey: Répondre à l'enquête
 share_survey: Partager l'enquête
-contact: Pour plus d'informations à propos de cette étude, merci de contacter
-language_leader: Jérôme Golebiowski
+contact: Pour plus d'informations à propos de cette étude, merci de contacter Jérôme Golebiowski
 leader_email: GCCR.covid19fr@gmail.com
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=be8c9203-1e43-4933-aad2-bf6b9ffe159e
 short_url: https://bit.ly/3a1A7b0

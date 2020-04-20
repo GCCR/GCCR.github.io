@@ -1,7 +1,7 @@
 ---
 layout: survey-base
 ---
-
+{% assign shared_link = page.short_url %}
 <!-- Survey box -->
 <section class="page-section" id="intro">
   <div class="container">
@@ -10,12 +10,14 @@ layout: survey-base
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
 
         <a href="{{ page.survey_url }}" class="btn btn-xl btn-primary text-uppercase my-1" type="submit">{{ page.take_survey }}</a>
-        <button id="share" class="btn btn-xl btn-primary text-uppercase my-1" type="button">{{ page.share_survey }}</button>
+        <a role="button" tabindex="0" id="share" class="btn btn-xl btn-primary text-uppercase my-1" type="button">{{ page.share_survey }}</a>
         
         <div class="w-100 pt-3 pb-5"></div>
+        
+        {{ page.hello }}
         {{ content }}
 
-        {{ page.contact }} {{ page.language_leader }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a>)
+        {{ page.contact }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a>)
 
       </div>
       <div class="py-5 col-lg-12 text-right">
@@ -41,16 +43,18 @@ layout: survey-base
       title: "Share via",
       selector: "#share",
       placement: "bottom",
+      trigger: "click",
       html: true,
       content: 
       '<div class="row align-items-center">' +
-        '<a class="col-2" target="_blank" href="https://twitter.com/share?url={{ page.short_url | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="text-dark fa-2x fab fa-twitter"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ page.short_url | url_encode }}"><i class="text-dark fa-2x fab fa-facebook"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.short_url | url_encode }}"><i class="text-dark fa-2x fab fa-linkedin"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ page.short_url | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-2x fab fa-whatsapp"></i></a>' +
-        '<a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%0A{{ page.short_url | url_encode }}"><i class="text-dark fa-2x fas fa-envelope"></i></a>' +
+        '<a class="col-2" target="_blank" href="https://twitter.com/share?url={{ shared_link | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="text-dark fa-2x fab fa-twitter"></i></a>' +
+        '<a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shared_link | url_encode }}"><i class="text-dark fa-2x fab fa-facebook"></i></a>' +
+        '<a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ shared_link | url_encode }}"><i class="text-dark fa-2x fab fa-linkedin"></i></a>' +
+        '<a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ shared_link | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-2x fab fa-whatsapp"></i></a>' +
+        '<a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%0A{{ shared_link | url_encode }}"><i class="text-dark fa-2x fas fa-envelope"></i></a>' +
+        '<a class="col-2" target="_blank" href="/assets/img/QR/GCCR-Survey-{{ page.language }}-QR.png"><i class="text-dark fa-2x fas fa-qrcode"></i></a>' +
       '</div>' +
-      'Short link: <a target="_blank" href="{{ page.short_url }}">{{ page.short_url }}</a>'
+      'Short link: <a target="_blank" href="{{ shared_link }}">{{ shared_link }}</a>'
     });
   });
 </script>

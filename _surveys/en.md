@@ -6,8 +6,7 @@ language: English
 hello: Hello!
 take_survey: Take the survey
 share_survey: Share the survey
-contact: For more information about this study, please contact
-language_leader: John Hayes
+contact: For more information about this study, please contact John Hayes
 leader_email: jeh40@psu.edu
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=86572382-0eec-447a-87ca-eb5c4d4d4d52
 short_url: http://bit.ly/343fERK

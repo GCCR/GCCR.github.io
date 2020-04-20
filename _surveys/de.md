@@ -6,8 +6,7 @@ language: German
 hello: Hallo!
 take_survey: Nehmen Sie an der Umfrage teil
 share_survey: Teilen Sie die Umfrage
-contact: Für weitere Informationen zur Studie kontaktieren Sie bitte
-language_leader: Kathrin Ohla
+contact: Für weitere Informationen zur Studie kontaktieren Sie bitte Kathrin Ohla
 leader_email: k.ohla@fz-juelich.de
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=370465b8-49ef-4d1b-82cc-164593387d69
 short_url: http://bit.ly/2yFCwLJ

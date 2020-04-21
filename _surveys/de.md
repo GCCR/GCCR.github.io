@@ -13,4 +13,4 @@ short_url: http://bit.ly/2yFCwLJ
 ---
 Das GCCR ist eine Gruppe von 600 Forschern, Ärzten, klinischen Mitarbeitern und Patientenvertretern aus 50 Ländern, gegründet als Antwort auf die COVID19-Pandemie. 
 
-Unser Ziel ist die Sammlung von Informationen um Berichte von Problemen bei der Geruchs- und Geschmackswahrnehmung im Zusammenhang mit COVID19 besser zu verstehen.
+Unser Ziel ist die Sammlung von Informationen, um Berichte von Problemen bei der Geruchs- und Geschmackswahrnehmung im Zusammenhang mit COVID19 besser zu verstehen.

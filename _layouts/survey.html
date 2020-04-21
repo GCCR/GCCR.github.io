@@ -2,16 +2,36 @@
 layout: survey-base
 ---
 {% assign shared_link = page.short_url %}
+{% assign social_icons_class = "text-dark fa-3x" %}
 <!-- Survey box -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+
 <section class="page-section" id="intro">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
 
-        <a href="{{ page.survey_url }}" class="btn btn-xl btn-primary text-uppercase my-1" type="submit">{{ page.take_survey }}</a>
-        <a role="button" tabindex="0" id="share" class="btn btn-xl btn-primary text-uppercase my-1" type="button">{{ page.share_survey }}</a>
-        
+        <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+
+        <div class="container col-lg-6 my-3">
+          <div class="row text-muted">
+            <p class="col text-center">{{ page.share_survey }}</p>
+          </div>
+          <div class="row align-items-center pt-1 pb-3">
+            <a class="col-2" target="_blank" href="https://twitter.com/share?url={{ shared_link | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="{{ social_icons_class }} fab fa-twitter"></i></a>
+            <a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fab fa-facebook"></i></a>
+            <a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fab fa-linkedin"></i></a>
+            <a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ shared_link | url_encode }}" data-action="share/whatsapp/share"><i class="{{ social_icons_class }} fab fa-whatsapp"></i></a>
+            <a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%0A{{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fas fa-envelope"></i></a>
+            <a class="col-2" target="_blank" href="/assets/img/QR/GCCR-Survey-{{ page.language }}-QR.png"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
+          </div>
+          <div class="row">
+            <p class="col text-center">Short link: <a target="_blank" href="{{ shared_link }}">{{ shared_link }}</a></p>
+          </div>
+        </div>
+
         <div class="w-100 pt-3 pb-5"></div>
         
         {{ page.hello }}
@@ -28,33 +48,4 @@ layout: survey-base
 </section>
 
 <!-- Empty section for spacing -->
-<section class="page-section" id="intro">
-  <div class="container">
-      <div class="row">
-      <br>
-      <br>
-      </div>
-    </div>
-</section>
-
-<script>
-  $(document).ready(function(){
-    $('body').popover({
-      title: "Share via",
-      selector: "#share",
-      placement: "bottom",
-      trigger: "click",
-      html: true,
-      content: 
-      '<div class="row align-items-center">' +
-        '<a class="col-2" target="_blank" href="https://twitter.com/share?url={{ shared_link | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="text-dark fa-2x fab fa-twitter"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shared_link | url_encode }}"><i class="text-dark fa-2x fab fa-facebook"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ shared_link | url_encode }}"><i class="text-dark fa-2x fab fa-linkedin"></i></a>' +
-        '<a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ shared_link | url_encode }}" data-action="share/whatsapp/share"><i class="text-dark fa-2x fab fa-whatsapp"></i></a>' +
-        '<a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | escape }}%0A{{ shared_link | url_encode }}"><i class="text-dark fa-2x fas fa-envelope"></i></a>' +
-        '<a class="col-2" target="_blank" href="/assets/img/QR/GCCR-Survey-{{ page.language }}-QR.png"><i class="text-dark fa-2x fas fa-qrcode"></i></a>' +
-      '</div>' +
-      'Short link: <a target="_blank" href="{{ shared_link }}">{{ shared_link }}</a>'
-    });
-  });
-</script>
+<div style="height: 10em;"></div>

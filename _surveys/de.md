@@ -11,6 +11,6 @@ leader_email: k.ohla@fz-juelich.de
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=370465b8-49ef-4d1b-82cc-164593387d69
 short_url: http://bit.ly/2yFCwLJ
 ---
-Das GCCR ist eine Gruppe von 600 Forschern, Ärzten, klinischen Mitarbeitern und Patientenvertretern aus 50 Ländern, gegründet als Antwort auf die COVID19-Pandemie. 
+Das GCCR ist eine Gruppe von 600 ForscherInnen, ÄrztInnen, klinischen MitarbeiterInnen und PatientenvertreterInnen aus 50 Ländern. Das Consortium wurde als Antwort auf die COVID19-Pandemie gegründet. 
 
 Unser Ziel ist die Sammlung von Informationen, um Berichte von Problemen bei der Geruchs- und Geschmackswahrnehmung im Zusammenhang mit COVID19 besser zu verstehen.

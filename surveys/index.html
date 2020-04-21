@@ -1,6 +1,6 @@
 ---
 title: GCCR surveys
-description: Take the GCCR survey!
+description: Participate in the GCCR study on respiratory illness (e.g COVID-19, influenza, flu) and their effect on taste and smell !
 layout: survey-base
 sitemap: false
 ---
@@ -13,7 +13,6 @@ sitemap: false
         <h2 id="sequence" class="section-heading text-uppercase pt-3" style="height: 180px;"></h2>
         <p class="text-muted">The <a href="/" target="_blank">GCCR</a> is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
         <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
-        <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
         {% for survey in site.surveys %}
         <div class="container">
           <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.title }}</a>
@@ -22,9 +21,15 @@ sitemap: false
         {% endfor %}
       </div>
     </div>
+    <div class="row col-lg-12 text-center">
+      {% include share-survey.html %}
+    </div>
   </div>
 </section>
-<!-- Take Survey -->
+
+<div class="container text-center pb-3">
+  <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
+</div>
 
 <script>
   var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner votre langue', 'こんにちは！ 言語を選択してください'];

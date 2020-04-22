@@ -38,7 +38,6 @@ paginate_path: "/news/page:num/"
 collections:
   surveys:
     output: true
-    sort_by: title
 # google analytics
 google_analytics: UA-162429198-1
 # seo

@@ -1,3 +1,5 @@
+- name: Surveys
+  link: /surveys/
 - name: COVID-19 Projects
   link: /projects/
 - name: Links

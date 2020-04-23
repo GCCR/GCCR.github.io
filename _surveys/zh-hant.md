@@ -1,5 +1,5 @@
 ---
-title: 繁體中文
+title: 中文(繁體)
 description: 請參與這個全球化學感官研究計畫！
 lang: zh_Hant   # https://www.unicode.org/cldr/charts/latest/supplemental/language_territory_information.html
 language: Traditional Chinese

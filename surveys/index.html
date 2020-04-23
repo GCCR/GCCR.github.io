@@ -2,7 +2,8 @@
 title: GCCR surveys
 description: Participate in the GCCR study on respiratory illness (e.g COVID-19, influenza, flu) and their effect on taste and smell !
 layout: survey-base
-sitemap: false
+sitemap:
+  priority: 0.8
 ---
 
 <!-- Survey box -->
@@ -15,10 +16,11 @@ sitemap: false
         <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
         {% assign surveys = site.surveys | sort: "title"%}
         {% for survey in surveys %}
-        <div class="container">
-          <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.title }}</a>
-          <div class="w-100 pb-1"></div>
-        </div>
+        {% assign remainder = forloop.index0 | modulo: 2 %}
+        {% if remainder == 0 %}
+        <div class="w-100 pb-1"></div>
+        {% endif %}
+        <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.title }}</a>
         {% endfor %}
       </div>
     </div>

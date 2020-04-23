@@ -15,13 +15,16 @@ sitemap:
         <p class="text-muted">The <a href="/" target="_blank">GCCR</a> is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
         <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
         {% assign surveys = site.surveys | sort: "title"%}
+        <div class="row">
         {% for survey in surveys %}
         {% assign remainder = forloop.index0 | modulo: 2 %}
-        {% if remainder == 0 %}
-        <div class="w-100 pb-1"></div>
-        {% endif %}
-        <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary text-uppercase" type="submit">{{ survey.title }}</a>
+
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <a lang="{{ survey.lang }}" href="{{ survey.url }}" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{ survey.title }}</a>
+            <div class="w-100 pb-1"></div>
+        </div>
         {% endfor %}
+          </div>
       </div>
     </div>
     <div class="row col-lg-12 text-center">

@@ -47,6 +47,20 @@ sitemap: false
     {% endunless %}
   {% endfor %}
 
+  {% for survey in site.surveys %}
+    <url>
+      <loc>{{ site.url }}{{ survey.url }}</loc>
+      {% if survey.sitemap.lastmod %}
+        <lastmod>{{ survey.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif survey.date %}
+        <lastmod>{{ survey.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+        <priority>0.6</priority>
+    </url>
+  {% endfor %}
+
   {% assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/404.html"' %}
   {% for page in pages %}
     <url>

@@ -13,7 +13,6 @@ defaults:
       author: GCCR
       permalink: /news/:year/:month/:day/:title
       type: NewsArticle
-      sitemap: false
   - scope:
       path: ""
       type: "surveys"

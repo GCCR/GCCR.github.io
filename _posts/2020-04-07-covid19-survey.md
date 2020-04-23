@@ -1,6 +1,7 @@
 ---
 author: cbouysset
 title: Our COVID-19 survey is now online
+published: false
 ---
 
 Welcome to our brand new news section !

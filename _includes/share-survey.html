@@ -1,5 +1,13 @@
 <!-- Share buttons -->
-{% assign shared_link = page.url | absolute_url %}
+{% if page.language %}
+  {% assign shared_link = page.url | absolute_url %}
+  {% assign short_url = page.short_url %}
+  {% capture qr_path %}img/QR/GCCR-Survey-{{ page.language | replace: ' ', '-' }}-QR.png{% endcapture %}
+{% else %}
+  {% assign short_url = "https://bit.ly/2zjZtUR" %}
+  {% assign shared_link = short_url %}
+  {% assign qr_path = "img/QR/GCCR-multilingual-QR.png" %}
+{% endif %}
 {% assign social_icons_class = "text-dark fa-3x" %}
 {% assign defaults = site.surveys | where_exp: "survey", "survey.language == 'English'" | first %}
 <div class="container col-lg-6 my-3">
@@ -12,11 +20,9 @@
     <a class="col-2" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fab fa-linkedin"></i></a>
     <a class="col-2" target="_blank" href="https://wa.me/?text={{ page.description | url_encode }}%0A{{ shared_link | url_encode }}" data-action="share/whatsapp/share"><i class="{{ social_icons_class }} fab fa-whatsapp"></i></a>
     <a class="col-2" target="_blank" href="mailto:?Subject={{ page.description | escape }}&amp;Body={{ page.take_survey | default: defaults.take_survey | escape }}%0A{{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fas fa-envelope"></i></a>
-    <a class="col-2" target="_blank" href="/assets/img/QR/GCCR-Survey-{{ page.language | default: defaults.language | replace: ' ', '-' }}-QR.png"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
+    <a class="col-2" target="_blank" href="/assets/{{ qr_path }}"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
   </div>
-  {% if page.short_url %}
   <div class="row">
-    <p class="col text-center">Short link: <a target="_blank" href="{{ page.short_url }}">{{ page.short_url }}</a></p>
+    <p class="col text-center">Short link: <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
   </div>
-  {% endif %}
 </div>

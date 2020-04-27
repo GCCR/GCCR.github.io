@@ -1,9 +1,8 @@
-{% assign ordered_links = site.data.survey-links | sort: "language" %}
+{% assign ordered_links = site.data.survey-links | sort: "title" %}
 <div class="row">
 {% for item in ordered_links %}
-  {% assign remainder = forloop.index0 | modulo: 3 %}
   <div class="col-sm-6 col-md-4 col-lg-4">
-    <a href="{{ item.url }}" target="_blank" class="btn btn-primary btn-block text-uppercase" type="submit">{{ item.language }}</a>
+    <a href="{{ item.survey_url }}" target="_blank" class="btn btn-primary btn-block text-uppercase" type="submit">{{ item.title }}</a>
     <div class="w-100 pb-1"></div>
  </div>
 {% endfor %}

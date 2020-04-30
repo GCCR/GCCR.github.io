@@ -1,9 +1,24 @@
-{% assign ordered_links = site.data.survey-links | sort: "title" %}
 <div class="row">
-{% for item in ordered_links %}
-  <div class="col-sm-6 col-md-4 col-lg-4">
-    <a href="{{ item.survey_url }}" target="_blank" class="btn btn-primary btn-block text-uppercase" type="submit">{{ item.title }}</a>
-    <div class="w-100 pb-1"></div>
- </div>
-{% endfor %}
-</div>
+  {% comment %}
+    Assign a direct link to compusense if there's no translated template available
+  {% endcomment %}
+  {% assign btn_class = btn_class | default: "btn btn-primary btn-block" %}
+  {% assign available_languages = site.surveys | map: "title" %}
+  {% assign all_languages = site.surveys | concat: site.data.survey-links | map: "title" | uniq %}
+  {% assign surveys = site.surveys %}
+  {% for language in all_languages %}
+    {% unless available_languages contains language %}
+      {% assign item = site.data.survey-links | where_exp: "survey", "survey.title == language" | first %}
+      {% assign surveys = surveys | push: item %}
+    {% endunless %}
+  {% endfor %}
+  {% assign surveys = surveys | sort: "title" %}
+  {% for survey in surveys %}
+    {% assign lang = survey.lang | default: 'en_US' %}
+    {% assign url = survey.url | default: survey.survey_url %}
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        <a lang="{{ lang }}" href="{{ url }}" class="{{ btn_class }} text-uppercase" type="submit">{{ survey.title }}</a>
+        <div class="w-100 pb-1"></div>
+    </div>
+  {% endfor %}
+  </div>

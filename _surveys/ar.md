@@ -1,5 +1,5 @@
 ---
-title: عربى
+title: اَلْعَرَبِيَّةُ
 description: (المشاركة في البحث المعد من قبل الجمعية العالمية البحثية للإحساس والكيمياء(ج،س،س،ر
 lang: ar_EG   # https://www.unicode.org/cldr/charts/latest/supplemental/language_territory_information.html
 language: Arabic

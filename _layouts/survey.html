@@ -4,6 +4,9 @@ layout: survey-base
 {% if "Arabic Hebrew Persian Urdu" contains page.language %}
   {% assign text_dir = 'dir="rtl"' %}
 {% endif %}
+{% assign emails_list = page.leader_email | split: " " %}
+{% capture emails %}{% for mail in emails_list %}<a href="mailto:{{ mail }}">{{ mail }}</a>,{% endfor %}{% endcapture %}
+{% assign emails = emails | split: "," %}
 
 <!-- Survey box -->
 <section class="page-section" id="intro">
@@ -29,8 +32,7 @@ layout: survey-base
         {{ page.hello }}
         {{ content }}
         
-        <!-- probably a more elegant method, maybe a list to unpack?-->
-        {{ page.contact }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a> {% if page.leader_email2 %} <a href="mailto:{{ page.leader_email2 }}">{{ page.leader_email2 }}</a> {% endif %} )
+        {{ page.contact }} ({{ emails | join: ", " }})
 
       </div>
       <div class="py-5 col-lg-12 text-right">

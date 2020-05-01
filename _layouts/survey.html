@@ -28,8 +28,13 @@ layout: survey-base
         
         {{ page.hello }}
         {{ content }}
-
-        {{ page.contact }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a>)
+        
+        <!-- probably a more elegant method, maybe a list to unpack?-->
+        {{ page.contact }} (<a href="mailto:{{ page.leader_email }}">{{ page.leader_email }}</a>
+        
+          {% if page.leader_email2 %}
+            or  (<a href="mailto:{{ page.leader_email2 }}">{{ page.leader_email2 }}</a>)
+          {% endif %} )
 
       </div>
       <div class="py-5 col-lg-12 text-right">

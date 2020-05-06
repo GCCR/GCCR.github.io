@@ -19,28 +19,34 @@ sitemap:
         <hr>
         <div class="w-100 pb-1"></div>
           
-        <h2 id="sequence" class="section-heading text-uppercase pt-3" style="height: 200px;"></h2>
-        <p class="text-muted">The <a href="/" target="_blank">GCCR</a> is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
-        <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
+        <h2 id="sequence" class="section-heading text-uppercase text-left pt-3"></h2>
+        <p class="text-muted text-left"> 
+          Have you had a respiratory illness of any kind recently? 
+          Willing to share a bit of information about your experiences? 
+          It’s easy and takes about 10 minutes. 
+        </p>
         {% assign btn_class = "btn btn-lg btn-primary btn-block" %}
         {% include survey-links.html %}
       </div>
     </div>
     
     <div class="w-100 pb-1"></div>
-    <hr>
+    <hr/>
     <div class="row col-lg-12 text-center">
       {% include share-survey.html %}
     </div>
+
+    <div class="py-1">
+      <p class="text-muted text-left">This study has been approved by the human subjects office at Penn State University in the United States of America, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
+    </div>
+
   </div>
+
 </section>
 
-<div class="container text-center pb-3">
-  <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
-</div>
-
+{% assign hello_array = site.surveys | where_exp: "item", "item.language != 'English'" | sort: "title" | map: "hello" | uniq | join: ";" %}
 <script>
-  var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner votre langue', 'Hallo! Bitte wählen Sie Ihre Sprache', 'こんにちは！ 言語を選択してください'];
+  var textArray = "Hello!;{{ hello_array }}".split(";");
   var index = 1;
   document.getElementById('sequence').innerHTML = textArray[0];
   setInterval(function(){        

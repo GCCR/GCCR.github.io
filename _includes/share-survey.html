@@ -10,9 +10,9 @@
 {% endif %}
 {% assign social_icons_class = "text-dark fa-3x" %}
 {% assign defaults = site.surveys | where_exp: "survey", "survey.language == 'English'" | first %}
-<div class="container col-lg-6 my-3">
-  <div class="row text-muted">
-    <p class="col text-center">{{ page.share_survey | default: defaults.share_survey }}</p>
+<div class="container col-lg-6 my-4">
+  <div class="row text-muted py-2">
+    <h5 class="col text-center text-uppercase">{{ page.share_survey | default: defaults.share_survey }}</h5>
   </div>
   <div class="row align-items-center pt-1 pb-3">
     <a class="col-2" target="_blank" href="https://twitter.com/share?url={{ shared_link | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="{{ social_icons_class }} fab fa-twitter"></i></a>
@@ -23,6 +23,6 @@
     <a class="col-2" target="_blank" href="/assets/{{ qr_path }}"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
   </div>
   <div class="row">
-    <p class="col text-center">Short link: <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
+    <p class="col text-center"><i class="text-dark fas fa-link mx-1"></i> <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
   </div>
 </div>

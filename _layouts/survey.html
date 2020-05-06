@@ -1,8 +1,9 @@
 ---
 layout: survey-base
 ---
+{% assign text_dir = 'class="text-left w-100"' %}
 {% if "Arabic Hebrew Persian Urdu" contains page.language %}
-  {% assign text_dir = 'dir="rtl"' %}
+  {% assign text_dir = 'class="text-right w-100" dir="rtl"' %}
 {% endif %}
 {% assign emails_list = page.leader_email | split: " " %}
 {% capture emails %}{% for mail in emails_list %}<a href="mailto:{{ mail }}">{{ mail }}</a>,{% endfor %}{% endcapture %}
@@ -10,33 +11,39 @@ layout: survey-base
 
 <!-- Survey box -->
 <section class="page-section" id="intro">
-  <div class="container" {{ text_dir }}>
+  <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
-        
-        <!-- A better way to go about this should be thought of... -->
-        <div class="img-fluid text-center">
-        <a href="https://gcchemosensr.org/">
-            <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
-        </a>
-        </div>
+      <div {{ text_dir }}>
+        <div class="col-lg-12">
           
-        <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
+          <!-- A better way to go about this should be thought of... -->
+          <div class="img-fluid text-center">
+            <a href="https://gcchemosensr.org/">
+              <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
+            </a>
+          </div>
+            
+          <h2 class="section-heading text-uppercase text-center py-5">{{ page.description }}</h2>
 
-        <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+          <div class="text-center">
+            <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+          </div>
 
-        {% include share-survey.html %}
+          {% include share-survey.html %}
 
-        <div class="w-100 pt-1 pb-5"></div>
-        
-        {{ page.hello }}
-        {{ content }}
-        
-        {{ page.contact }} ({{ emails | join: ", " }})
+          <div class="w-100 pt-1 pb-5"></div>
+          
+          {{ page.hello }}
+          {{ content }}
+          
+          {{ page.contact }} ({{ emails | join: ", " }})
 
-      </div>
-      <div class="py-5 col-lg-12 text-right">
-        <a href="/surveys/">← Back to language selection</a>
+        </div>
+      
+        <div class="py-5 col-lg-12 text-right">
+          <a href="/surveys/">← Back to language selection</a>
+        </div>
+
       </div>
     </div>
   </div>

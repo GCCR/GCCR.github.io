@@ -1,9 +1,7 @@
 # imports
 import os, sys, re
 from datetime import datetime
-from math import ceil
 import pandas as pd
-import numpy as np
 import geopandas as gpd
 import seaborn as sns
 import bokeh
@@ -53,7 +51,7 @@ if len(empty) != 0:
 	members.dropna(subset=["Full name"], inplace=True)
 	print("Lines with empty member's name dropped")
 # set columns
-members = members[["Full name","Institution","Country"]]
+members = members[["Full name","Institution","Country of Institution"]]
 members.columns = ["Member","Institution","Country"]
 
 # correct country names to be the same as natural-earth-vector
@@ -175,7 +173,7 @@ save(p)
 
 # standardize institution names for the YML
 def standardize(x):
-    x = x.strip()
+    x = str(x).strip()
     if x.startswith("'"):
         x = '"%s"' % x
     elif x.startswith('"'):
@@ -188,6 +186,9 @@ websites = [
 	("Keiland W. Cooper", "https://kwcooper.xyz"),
 	("Valentina Parma", "https://vparma.netlify.com/"),
 	("Cédric Bouysset", "https://cbouy.github.io"),
+	("John Hayes", "https://foodscience.psu.edu/directory/jeh40"),
+	("Masha Niv", "https://biochem-food-nutrition.agri.huji.ac.il/mashaniv"),
+	("Kathrin Ohla", "https://www.kathrinohla.de/"),
 ]
 for name, url in websites:
 	members.loc[members["Member"] == name, "Website"] = url

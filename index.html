@@ -7,109 +7,124 @@ sitemap:
 
 <!-- Survey box -->
 <section class="page-section" id="surveys">
-    <div class="container">
-         <div class="row">
-             <div class="col-lg-12 text-center">
-                 <h2 class="section-heading text-uppercase">Participate in the GCCR study</h2>
-                 <p class="text-muted"> We are conducting a world-wide scientific study to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell & taste </p>
-                 <p class="text-muted"> To learn more and to participate in the study, click the survey button below.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Participate in the GCCR study</h2>
+        <p class="text-muted"> We are conducting a world-wide scientific study to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell & taste </p>
+        <p class="text-muted"> To learn more and to participate in the study, click the survey button below.</p>
 
-                 {% include survey-links.html %}
+        {% include survey-links.html %}
 
-             </div>
-         </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<!-- Video -->
+<div class="container" id="gccr-video">
+  <script>
+    var datetime_limit = new Date("2020-05-18T10:30:00-04:00");
+    var now = new Date();
+    if ( now <= datetime_limit ) {
+      $("#gccr-video").hide();
+    }
+  </script>
+  <div class="embed-responsive embed-responsive-16by9">
+    <!-- replace *** with the youtube video ID -->
+    <iframe id="ytplayer" src="http://www.youtube.com/embed/***" class="embed-responsive-item" type="text/html" width="800" height="450" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
 <!-- Introduction -->
 <section class="page-section" id="intro">
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Introduction</h2>
+        <p class="text-muted"> In response to anecdotal reports of the loss of smell and of taste in people who have tested positive for COVID-19, a group of international smell and taste researchers have united to study how, when and why this is happening and what it can tell us about the Coronavirus. </p>
+
+        <p class="text-muted"> This inclusive group, called The Global Consortium of Chemosensory Researchers (GCCR), consists of open-science contributors: transdisciplinary scientists, clinicians, and patient advocates from all over the world. </p>
+
+        <p class="text-muted">  Because the systems of smell and taste are related, so are the symptoms of loss of these senses. Yet the loss of the sense of smell after a virus, such as a common cold, affects many people, whereas the loss of the sense of taste is reported much less frequently. </p>
+
+        <p class="text-muted"> The GCCR wants to know if smell loss is a frequent symptom of the Coronavirus and if it is accompanied by taste loss. </p>
+      </div>
+      <!--
+      <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Introduction</h2>
-                <p class="text-muted"> In response to anecdotal reports of the loss of smell and of taste in people who have tested positive for COVID-19, a group of international smell and taste researchers have united to study how, when and why this is happening and what it can tell us about the Coronavirus. </p>
-
-                <p class="text-muted"> This inclusive group, called The Global Consortium of Chemosensory Researchers (GCCR), consists of open-science contributors: transdisciplinary scientists, clinicians, and patient advocates from all over the world. </p>
-
-                <p class="text-muted">  Because the systems of smell and taste are related, so are the symptoms of loss of these senses. Yet the loss of the sense of smell after a virus, such as a common cold, affects many people, whereas the loss of the sense of taste is reported much less frequently. </p>
-
-                <p class="text-muted"> The GCCR wants to know if smell loss is a frequent symptom of the Coronavirus and if it is accompanied by taste loss. </p>
-            </div>
-            <!--
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <br>
-                        <hr>
-                        <h2 class="section-heading text-uppercase">Vision</h2>
-                        <p class="text-muted"> The Global Consortium on Chemosensory Research (GCCR) has been started with the aim of uniting chemosensory scientists worldwide to understand reports of the chemosensory issues related to COVID-19. More broadly, the GCCR aspires to define, coordinate, and disseminate global efforts to advance the scientific understanding and clinical practice related to the chemical senses. </p>
-                    </div>
-                </div>
-            </div>
-            -->  
+          <div class="col-lg-12 text-center">
+            <br>
+            <hr>
+            <h2 class="section-heading text-uppercase">Vision</h2>
+            <p class="text-muted"> The Global Consortium on Chemosensory Research (GCCR) has been started with the aim of uniting chemosensory scientists worldwide to understand reports of the chemosensory issues related to COVID-19. More broadly, the GCCR aspires to define, coordinate, and disseminate global efforts to advance the scientific understanding and clinical practice related to the chemical senses. </p>
+          </div>
         </div>
+      </div>
+      -->  
     </div>
+  </div>
 </section>
 
-  <!-- Mission -->
-  <section class="page-section" id="missions">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Mission</h2>
-          <p class="text-muted">The GCCR will foster the advancement of chemosensory science at large, allowing the possibility to test larger samples of participants cross-culturally, strengthening the reliability and validity of chemosensory science across many domains.</p>
-            <p class="text-muted"> Currently, the timely mission of the GCCR is to define and coordinate world-wide crowdsourced research to understand the reports of the chemosensory issues related to COVID-19. Subsequently, the establishment of this consortium. </p>
-          <p class="text-muted"> In accomplishing this mission, the GCCR’s primary roles are to work cooperatively with its members to: </p>
-          <br>
-        </div>
-      </div>
-      <div class="row text-center">
-        
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-globe-americas fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Collaborate</h4>
-          <p class="text-muted">Encourage and facilitate global collaboration in concert with local collaboration across countries, labs, scientists and clinicians interested in the chemical senses.  </p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Research</h4>
-          <p class="text-muted">Encourage and facilitate the implementation of open science practices the GCCR projects will allow the members as well as the community at large to access protocols and data.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Disseminate</h4>
-          <p class="text-muted">Encourage and facilitate the development and dissemination of new knowledge by authoring papers based on the core data collected by the GCCR as a group. </p>
-        </div>
+<!-- Mission -->
+<section class="page-section" id="missions">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Mission</h2>
+        <p class="text-muted">The GCCR will foster the advancement of chemosensory science at large, allowing the possibility to test larger samples of participants cross-culturally, strengthening the reliability and validity of chemosensory science across many domains.</p>
+          <p class="text-muted"> Currently, the timely mission of the GCCR is to define and coordinate world-wide crowdsourced research to understand the reports of the chemosensory issues related to COVID-19. Subsequently, the establishment of this consortium. </p>
+        <p class="text-muted"> In accomplishing this mission, the GCCR’s primary roles are to work cooperatively with its members to: </p>
+        <br>
       </div>
     </div>
-  </section>
+    <div class="row text-center">
+      
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-globe-americas fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Collaborate</h4>
+        <p class="text-muted">Encourage and facilitate global collaboration in concert with local collaboration across countries, labs, scientists and clinicians interested in the chemical senses.  </p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Research</h4>
+        <p class="text-muted">Encourage and facilitate the implementation of open science practices the GCCR projects will allow the members as well as the community at large to access protocols and data.</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fas fa-circle fa-stack-2x text-primary"></i>
+          <i class="fas fa-paper-plane fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Disseminate</h4>
+        <p class="text-muted">Encourage and facilitate the development and dissemination of new knowledge by authoring papers based on the core data collected by the GCCR as a group. </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% include twitter-feed.html %}
 
 {% include members-map.html %}
 
-  <!-- Partners -->
-  <section class="py-5">
-    <div class="container">
-      <div class="col-md-3 col-sm-3">
-        <p> Thank You to:</p> 
-      </div>
-      <div class="row">
-        <a href="https://slack.com/">
-          <img class="img-fluid float-left partners-logo" src="/assets/img/slack.png" alt="Slack logo">
-        </a>
-        <a href="https://formspree.io/">
-          <img class="img-fluid float-left partners-logo pt-3" src="/assets/img/formspree.png" alt="Formspree logo">
-        </a>
-      </div>
+<!-- Partners -->
+<section class="py-5">
+  <div class="container">
+    <div class="col-md-3 col-sm-3">
+      <p> Thank You to:</p> 
     </div>
-  </section>
+    <div class="row">
+      <a href="https://slack.com/">
+        <img class="img-fluid float-left partners-logo" src="/assets/img/slack.png" alt="Slack logo">
+      </a>
+      <a href="https://formspree.io/">
+        <img class="img-fluid float-left partners-logo pt-3" src="/assets/img/formspree.png" alt="Formspree logo">
+      </a>
+    </div>
+  </div>
+</section>

@@ -32,15 +32,18 @@ sitemap:
     <div class="row col-lg-12 text-center">
       {% include share-survey.html %}
     </div>
+    <div class="py-5 col-lg-12 text-right">
+        <a href="/index.html">← GCCR Homepage</a>
+    </div>
   </div>
 </section>
 
 <div class="container text-center pb-3">
-  <p class="text-muted">This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
+    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
 </div>
 
 <script>
-  var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner votre langue', 'Hallo! Bitte wählen Sie Ihre Sprache', 'こんにちは！ 言語を選択してください'];
+  var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner votre langue', 'Hello! Please select your language', 'Hallo! Bitte wählen Sie Ihre Sprache', 'こんにちは！ 言語を選択してください'];
   var index = 1;
   document.getElementById('sequence').innerHTML = textArray[0];
   setInterval(function(){        

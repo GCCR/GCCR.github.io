@@ -136,7 +136,7 @@ p.toolbar.active_inspect = hover
 p.toolbar.active_scroll = zoom
 # colormap
 bins = ["No members", "1-5", ">5"]
-palette = ["#f2f2f2"] + sns.color_palette("Blues", len(bins)-1).as_hex()
+palette = ["#f2f2f2"] + sns.color_palette("Greens", len(bins)-1).as_hex()
 cmap = CategoricalColorMapper(palette=palette, factors=bins)
 source = df.copy()
 source["bin"] = pd.cut(source["N_members"], bins=[-1, 1 -1, 5 +1, source["N_members"].max()], labels=bins)

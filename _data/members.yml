@@ -76,6 +76,9 @@
 - name: Hadas Avni
   institution: Maccabi health services
   country: Israel
+- name: Hamidreza Bagheri
+  institution: Iran university of medical science
+  country: Iran
 - name: Martha Bajec
   institution: Independent Researcher
   country: Canada
@@ -136,6 +139,9 @@
 - name: Vasyl Bogdanov
   institution: Carl Thiem Klinikum
   country: Germany
+- name: Helena Maria Andre Bolini
+  institution: University of Campinas - UNICAMP
+  country: Brazil
 - name: Dadji Stephane Bonny
   institution: National Nutrition Programme
   country: Cote d'Ivoire
@@ -146,6 +152,9 @@
   institution: Institut de Chimie de Nice, Université Côte D'Azur
   country: France
   url: https://cbouy.github.io
+- name: Emanuele Brai
+  institution: VIB - KU Leuven
+  country: Belgium
 - name: Jessica H. Brann
   institution: Firmenich
   country: United States of America
@@ -164,8 +173,11 @@
 - name: Mirjam Van Den Brink
   institution: Princess Maxima Center for pediatric oncology/Maastricht University
   country: Netherlands
+- name: Ian Brooks
+  institution: University of Illinois
+  country: United States of America
 - name: Jas Brooks
-  institution: University of Chicaago
+  institution: University of Chicago
   country: United States of America
 - name: Linda Buck
   institution: Fred Hutchinson Cancer Research Center
@@ -173,6 +185,9 @@
 - name: Andrea Buettner
   institution: FAU Erlangen, Chair of Aroma and Smell Research
   country: Germany
+- name: Shawn D. Burton
+  institution: University of Pittsburgh
+  country: United States of America
 - name: Niko Busch
   institution: University of Muenster
   country: Germany
@@ -218,6 +233,9 @@
 - name: Jingguo Chen
   institution: Second Affiliated Hospital of Xi'an Jiaotong University
   country: China
+- name: Ben Chen
+  institution: The Affiliated Brain Hospital of Guangzhou Medical University
+  country: China
 - name: Cheng Cheng 
   institution: UC Irvine
   country: United States of America
@@ -242,6 +260,9 @@
 - name: Xiaojing Cong
   institution: Institute of Chemistry of Nice, University Cote d'Azur
   country: France
+- name: Chris Cooper
+  institution: Altered Eating Research Network
+  country: Australia
 - name: Keiland W. Cooper
   institution: University of California, Irvine
   country: United States of America
@@ -252,6 +273,9 @@
 - name: Lucie Cormons
   institution: LIP/PC2Sf
   country: France
+- name: Bernadette M. Cortese
+  institution: Medical University of South Carolina
+  country: United States of America
 - name: Gérard Coureaud 
   institution: CNRS - Lyon Neuroscience Research Center
   country: France
@@ -456,6 +480,9 @@
 - name: Andrea Giacomelli
   institution: University of Milan
   country: Italy
+- name: Edward Leigh Gibson
+  institution: University of Roehampton
+  country: United Kingdom
 - name: Alejandro Giorgetti
   institution: University of Verona and
   country: Italy
@@ -468,6 +495,9 @@
 - name: Tazuko K. Goto
   institution: Tokyo Dental College
   country: Japan
+- name: Adam S. Greenberg
+  institution: Medical College of Wisconsin
+  country: United States of America
 - name: Robert S Greene
   institution: HungerNdThirst Foundation
   country: Netherlands
@@ -485,6 +515,9 @@
   country: Spain
 - name: Naresh Hanchate
   institution: Fred Hutchinson Cancer Research Center
+  country: United States of America
+- name: Mackenzie Hannum
+  institution: Monell Chemical Senses Center
   country: United States of America
 - name: Nasreen Haque
   institution: New York Medical College
@@ -532,7 +565,7 @@
 - name: Mojgan Hodaie
   institution: Univesity of Toronto
   country: Canada
-- name: Eric H Holbrook,
+- name: Eric H Holbrook
   institution: Massachusetts Eye and Ear/Harvard Medical School
   country: United States of America
 - name: Leah Holzel
@@ -598,6 +631,9 @@
 - name: Jeb M. Justice
   institution: University of Florida
   country: United States of America
+- name: Pinky Kain
+  institution: Regional centre for biotechnology, Faridabad
+  country: India
 - name: Vidya Kamath
   institution: The Johns Hopkins University School of Medicine
   country: United States of America
@@ -622,12 +658,12 @@
 - name: Ajayi Kayode 
   institution: Afe Babalola University, Nigeria
   country: Nigeria
-- name: Andreas Keller
-  institution: Rockefeller University
-  country: United States of America
 - name: Keller
   institution: CNRS
   country: France
+- name: Andreas Keller
+  institution: Rockefeller University
+  country: United States of America
 - name: Chrissi Kelly
   institution: AbScent
   country: United Kingdom
@@ -658,6 +694,9 @@
 - name: Hadar Klein
   institution: Hebrew University of Jerusalem
   country: Israel
+- name: Maria Klyuchnikova
+  institution: Severtsov Institute of Ecology and Evolution
+  country: Russia
 - name: Antti Knaapila
   institution: University of Helsinki
   country: Finland
@@ -721,12 +760,12 @@
 - name: Djin Gie Liem
   institution: Deakin University
   country: Australia
-- name: Juyun Lim
-  institution: Oregon State University
-  country: United States of America
 - name: Sierin Lim
   institution: Nanyang Technological University
   country: Singapore
+- name: Juyun Lim
+  institution: Oregon State University
+  country: United States of America
 - name: Weihong Lin
   institution: University of Maryland Baltimore County
   country: United States of America
@@ -802,6 +841,9 @@
 - name: Lawrence E Marks
   institution: John B Pierce Laboratory - Yale University
   country: United States of America
+- name: Luc Marlier
+  institution: INCUBE CNRS
+  country: France
 - name: Carla Masala
   institution: University of Cagliari, Department of Biomedical Sciences
   country: Italy
@@ -990,6 +1032,9 @@
 - name: Lina Öztürk
   institution: Mersin Üniversitesi
   country: Turkey
+- name: Jody Pacalon
+  institution: Université Côte D'azur
+  country: France
 - name: Rodrigo Pacifico
   institution: Independent (currently in industry)
   country: United States of America
@@ -1063,12 +1108,18 @@
 - name: Sophia Poletti
   institution: University Hospital of Bern, Smell and Taste Clinic, ENT department
   country: Switzerland
+- name: Elbrich Postma
+  institution: Wageningen University
+  country: Netherlands
 - name: Supraja Prasad
   institution: None
   country: India
 - name: Kate Prigge
   institution: Symrise
   country: United States of America
+- name: Michael Proulx
+  institution: University of Bath
+  country: United Kingdom
 - name: Sharadindu Rai
   institution: London Health Sciences Center
   country: Canada
@@ -1096,6 +1147,9 @@
 - name: Lorena Rela
   institution: University of Buenos Aires
   country: Argentina
+- name: David Renaud
+  institution: Nice University Hospital
+  country: France
 - name: Bertold Renner
   institution: TU-Dresden
   country: Germany
@@ -1228,12 +1282,12 @@
 - name: Charlotte Sinding
   institution: CSGA
   country: France
-- name: Preet Bano Singh
-  institution: University of Oslo
-  country: Norway
 - name: Paramdeep Singh
   institution: Baba Farid University of Health Sciences
   country: India
+- name: Preet Bano Singh
+  institution: University of Oslo
+  country: Norway
 - name: Dana Small
   institution: Yale
   country: United States of America
@@ -1315,6 +1369,9 @@
 - name: Jérémie Topin
   institution: Université Côte d'Azur
   country: France
+- name: Aurora Toskala
+  institution: Monell Chemical Senses Center
+  country: United States of America
 - name: Kazushige Touhara
   institution: The University of Tokyo
   country: Japan
@@ -1323,6 +1380,9 @@
   country: Thailand
 - name: Jenifer Trachtman
   institution: Monell Chemical Senses Center
+  country: United States of America
+- name: Susan Travers
+  institution: Ohio State University
   country: United States of America
 - name: Anne Tromelin
   institution: INRAE
@@ -1432,12 +1492,12 @@
 - name: Nur Yoluk
   institution: Mersin University
   country: Turkey
-- name: C. Ron Yu
-  institution: Stowers Institute
-  country: United States of America
 - name: Yiqun Yu
   institution: Fudan University Eye, Ear, Nose and Throat Hospital
   country: China
+- name: C. Ron Yu
+  institution: Stowers Institute
+  country: United States of America
 - name: Marta Zakrzewska
   institution: Stockholm University
   country: Sweden

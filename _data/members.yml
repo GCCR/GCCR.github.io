@@ -25,6 +25,9 @@
 - name: Elroy Aijal
   institution: HungerNdThirst
   country: Netherlands
+- name: Kayode Ajayi 
+  institution: Ekiti
+  country: Nigeria
 - name: Javier Albayay
   institution: University of Padova
   country: Italy
@@ -37,12 +40,21 @@
 - name: Mark Albers
   institution: MGH / Harvard Medical School
   country: United States of America
+- name: Raul Alfaro
+  institution: University of Illinois at Urbana Champaign
+  country: United States of America
 - name: Mercedes Alfonso-Prieto
   institution: Forschungszentrum Jülich
   country: Germany
 - name: Rafieh Alizadeh
   institution: ENT and Head and Neck Research Center and Department,Hazrat Rasoul Hospital, the Five Senses Institute, Iran University of Medical Sciences, Tehran, Iran
   country: Iran
+- name: Olivia Allison
+  institution: Philadelphia
+  country: United States of America
+- name: Shannon Alshouse
+  institution: State College
+  country: United States of America
 - name: Aytug Altundag
   institution: Acibadem Taksim Hospital
   country: Turkey
@@ -61,6 +73,9 @@
 - name: Sylvain Antoniotti
   institution: CNRS - Université Cote d'Azur
   country: France
+- name: Maria Elena Arabolaza
+  institution: CABA
+  country: Argentina
 - name: Nicholas Archer
   institution: CSIRO
   country: Australia
@@ -91,6 +106,9 @@
 - name: Linda A Barlow
   institution: University of Colorado School of Medicine
   country: United States of America
+- name: Ann-Sophie Barwich
+  institution: Bloomington
+  country: United States of America
 - name: Angela Bassoli
   institution: University of Milan
   country: Italy
@@ -106,6 +124,9 @@
 - name: Julie Beitscher
   institution: anosmia patient
   country: United States of America
+- name: Graham Bell
+  institution: Hunters Hill
+  country: Australia
 - name: Moustafa Bensafi
   institution: CNRS - Lyon Neuroscience Research Center
   country: France
@@ -139,9 +160,6 @@
 - name: Vasyl Bogdanov
   institution: Carl Thiem Klinikum
   country: Germany
-- name: Helena Maria Andre Bolini
-  institution: University of Campinas - UNICAMP
-  country: Brazil
 - name: Dadji Stephane Bonny
   institution: National Nutrition Programme
   country: Cote d'Ivoire
@@ -245,6 +263,9 @@
 - name: Nattida Chotechuang
   institution: Chulalongkorn University
   country: Thailand
+- name: Olivia Christman
+  institution: University Park
+  country: United States of America
 - name: Seo-Jin Chung
   institution: Ewha Womans University
   country: Korea, South
@@ -260,13 +281,13 @@
 - name: Xiaojing Cong
   institution: Institute of Chemistry of Nice, University Cote d'Azur
   country: France
-- name: Chris Cooper
-  institution: Altered Eating Research Network
-  country: Australia
 - name: Keiland W. Cooper
   institution: University of California, Irvine
   country: United States of America
   url: https://kwcooper.xyz
+- name: Chris Cooper
+  institution: Sydney
+  country: Australia
 - name: Geraldine Coppin
   institution: Swiss Distance University Institute; Swiss Center for Affective Sciences, University of Geneva
   country: Switzerland
@@ -285,6 +306,9 @@
 - name: Roberto Crnjar
   institution: University of Cagliari
   country: Italy
+- name: Emily Crofton
+  institution: Dublin
+  country: Ireland
 - name: Ilja Croijmans
   institution: Utrecht University
   country: Netherlands
@@ -306,6 +330,12 @@
 - name: Adish Dani
   institution: TIFR, Hyderabad
   country: India
+- name: Sandeep Datta
+  institution: Boston
+  country: United States of America
+- name: Renaud David
+  institution: NICE UNIVERSITY HOSPITAL
+  country: France
 - name: Vincent Deary
   institution: Northumbria University
   country: United Kingdom
@@ -345,6 +375,9 @@
 - name: Paloma Rohlfs Domínguez
   institution: University of Extremadura
   country: Spain
+- name: Richard Doty
+  institution: Philadelphia
+  country: United States of America
 - name: Klaus Duerrschmid
   institution: University of Natural Resources and Life Sciences (BOKU)
   country: Austria
@@ -357,6 +390,9 @@
 - name: Ingrid Ekström 
   institution: Karolinska Institutet
   country: Sweden
+- name: Blanca Enriquez
+  institution: Edmonton
+  country: Canada
 - name: Hector Bernardo Escalona-Buendia
   institution: Univesidad Autonoma Metropolitana
   country: Mexico
@@ -375,6 +411,9 @@
 - name: Michael Farruggia
   institution: Yale University
   country: United States of America
+- name: Dr. Emma Feeney
+  institution: Dublin
+  country: Ireland
 - name: Alexandra Feldmeyer
   institution: Mane, Inc.
   country: United States of America
@@ -481,7 +520,7 @@
   institution: University of Milan
   country: Italy
 - name: Edward Leigh Gibson
-  institution: University of Roehampton
+  institution: London
   country: United Kingdom
 - name: Alejandro Giorgetti
   institution: University of Verona and
@@ -622,6 +661,12 @@
 - name: Jacquot Muriel
   institution: MYRISSI -LORRAINE UNIVERSITY
   country: France
+- name: Atiye Sraabi Jamab
+  institution: IPM
+  country: Iran
+- name: Elina Jerschow
+  institution: Bronx
+  country: United States of America
 - name: Marie Jette
   institution: University of Colorado Anschutz Medical Campus
   country: United States of America
@@ -736,11 +781,17 @@
 - name: Ilya G. Kvasha
   institution: A.N. Severtsov institute of ecology and evolution
   country: Russia
+- name: Michelle Krell Kydd
+  institution: Ann Arbor, Michigan
+  country: United States of America
 - name: Tatiana K Laktionova
   institution: A.N. Severtsov Institute of Ecology and Evolution
   country: Russia
 - name: Andrew Lane
   institution: Johns Hopkins University
+  country: United States of America
+- name: Eric Larson
+  institution: Aurora, CO
   country: United States of America
 - name: Christophe Laudamiel
   institution: DreamAir LLC
@@ -790,6 +841,9 @@
 - name: Tyler S. Lorig
   institution: Washington and Lee University
   country: United States of America
+- name: Marlier Luc
+  institution: Strasbourg
+  country: France
 - name: Laurie Lucchina
   institution: Drinkworks
   country: United States of America
@@ -835,6 +889,9 @@
 - name: Eitan Margulis
   institution: The Hebrew university of Jerusalem
   country: Israel
+- name: Helena Maria Andre Bolini
+  institution: Campinas, Sao Paulo
+  country: Brazil
 - name: Sajidxa Mariño
   institution: Centro Respira Libre
   country: Venezuela
@@ -844,6 +901,12 @@
 - name: Luc Marlier
   institution: INCUBE CNRS
   country: France
+- name: Claire Martin
+  institution: Paris
+  country: France
+- name: Maryam
+  institution: Tehran
+  country: Iran
 - name: Carla Masala
   institution: University of Cagliari, Department of Biomedical Sciences
   country: Italy
@@ -871,12 +934,18 @@
 - name: Melania Melis
   institution: University of Cagliari, Department of Biomedical Science
   country: Italy
+- name: Ivan Mendez
+  institution: Mexico
+  country: Mexico
 - name: Nick Menger
   institution: Forschungszentrum Jülich
   country: Germany
 - name: Anna Menini
   institution: SISSA
   country: Italy
+- name: Julie Mennella
+  institution: Philadelphia
+  country: United States of America
 - name: Pablo Meyer
   institution: IBM research
   country: United States of America
@@ -1109,7 +1178,7 @@
   institution: University Hospital of Bern, Smell and Taste Clinic, ENT department
   country: Switzerland
 - name: Elbrich Postma
-  institution: Wageningen University
+  institution: Wageningen University & Research
   country: Netherlands
 - name: Supraja Prasad
   institution: None
@@ -1177,6 +1246,9 @@
 - name: Angélica Romero 
   institution: UAM
   country: Mexico
+- name: Paola Rossi
+  institution: torre d isola
+  country: Italy
 - name: Yehudah Roth
   institution: Wolfson Medical Center, Tel Aviv University
   country: Israel
@@ -1393,6 +1465,9 @@
 - name: Trotier Didier
   institution: CNRS (retired)
   country: France
+- name: Tatsuya Tsukahara
+  institution: Boston
+  country: United States of America
 - name: Raewyn Turner
   institution: Artist
   country: New Zealand

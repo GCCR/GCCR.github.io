@@ -6,6 +6,14 @@ language: English
 hello: Hello!
 take_survey: Take the survey
 take_self_check: Take the self-check
+self_check_response: "Based on your response, you are invited to:"
+self_check_choices: [
+    "I am currently sick with a respiratory illness (COVID-19, flu, cold)",
+    "I have been sick in the past two weeks with a respiratory illness (COVID-19, flu, cold)",
+    "I have been sick with a respiratory illness (COVID-19, flu, cold) more than 2 weeks ago",
+    "I have been sick and now I want to monitor my sense of smell and taste",
+    "I am healthy, but want to monitor my sense of smell and taste"
+]
 share_survey: Share the survey
 contact: For more information about this study, please contact John Hayes
 leader_email: jeh40@psu.edu

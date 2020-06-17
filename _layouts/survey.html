@@ -1,9 +1,8 @@
 ---
 layout: survey-base
 ---
-{% assign text_dir = 'class="text-left w-100"' %}
 {% if "Arabic Hebrew Persian Urdu" contains page.language %}
-  {% assign text_dir = 'class="text-right w-100" dir="rtl"' %}
+  {% assign text_dir = 'dir="rtl"' %}
 {% endif %}
 {% assign emails_list = page.leader_email | split: " " %}
 {% capture emails %}{% for mail in emails_list %}<a href="mailto:{{ mail }}">{{ mail }}</a>,{% endfor %}{% endcapture %}
@@ -11,39 +10,120 @@ layout: survey-base
 
 <!-- Survey box -->
 <section class="page-section" id="intro">
-  <div class="container">
+  <div class="container" {{ text_dir }}>
     <div class="row">
-      <div {{ text_dir }}>
-        <div class="col-lg-12">
+      <div class="col-lg-12 text-center">
+        
+        <div class="img-fluid text-center">
+        <a href="https://gcchemosensr.org/">
+            <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
+        </a>
+        </div>
           
-          <!-- A better way to go about this should be thought of... -->
-          <div class="img-fluid text-center">
-            <a href="https://gcchemosensr.org/">
-              <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
-            </a>
+        <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
+        
+        {% if page.take_self_check %}
+        <!-- MCQ that takes users to the right tool -->
+        <div class="text-left">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mcq-tools" value="option1" id="mcq-tools1" data-toggle="modal" data-target="#ModalSurvey">
+            <label class="form-check-label" for="mcq-tools1">
+              I am currently sick with a respiratory illness (COVID-19, flu, cold)
+            </label>
           </div>
-            
-          <h2 class="section-heading text-uppercase text-center py-5">{{ page.description }}</h2>
-
-          <div class="text-center">
-            <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mcq-tools" value="option2" id="mcq-tools2" data-toggle="modal" data-target="#ModalSurvey">
+            <label class="form-check-label" for="mcq-tools2">
+              I have been sick in the past two weeks with a respiratory illness (COVID-19, flu, cold)
+            </label>
           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mcq-tools" value="option3" id="mcq-tools3" data-toggle="modal" data-target="#ModalSelfCheck">
+            <label class="form-check-label" for="mcq-tools3">
+              I have been sick with a respiratory illness (COVID-19, flu, cold) more than 2 weeks ago
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mcq-tools" value="option4" id="mcq-tools4" data-toggle="modal" data-target="#ModalSelfCheck">
+            <label class="form-check-label" for="mcq-tools4">
+              I have been sick and now I want to monitor my sense of smell and taste
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="mcq-tools" value="option5" id="mcq-tools5" data-toggle="modal" data-target="#ModalSelfCheck">
+            <label class="form-check-label" for="mcq-tools5">
+              I am healthy, but want to monitor my sense of smell and taste
+            </label>
+          </div>
+        </div>
 
-          {% include share-survey.html %}
+        <div style="height: 5em;"></div>
 
-          <div class="w-100 pt-1 pb-5"></div>
-          
+        <!-- Modal survey -->
+        <div class="modal fade" id="ModalSurvey" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalSurveyTitle">{{ page.description }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Based on your response, you are invited to:
+                <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal self-check -->
+        <div class="modal fade" id="ModalSelfCheck" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalSelfCheckTitle">{{ page.description }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Based on your response, you are invited to:
+                <a href="{{ page.self_check_url }}" class="col-lg-6 btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_self_check }}</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
+
+        <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+
+        {% if page.take_self_check %}
+
+        <a href="{{ page.self_check_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
+        {% endif %}
+
+        {% include share-survey.html %}
+
+        <div class="w-100 pt-1 pb-5"></div>
+        
+        <div class="text-left">
           {{ page.hello }}
           {{ content }}
           
           {{ page.contact }} ({{ emails | join: ", " }})
-
-        </div>
-      
-        <div class="py-5 col-lg-12 text-right">
-          <a href="/surveys/">← Back to language selection</a>
         </div>
 
+      </div>
+      <div class="py-5 col-lg-12 text-right">
+        <a href="/surveys/">← Back to language selection</a>
       </div>
     </div>
   </div>

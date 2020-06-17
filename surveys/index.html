@@ -1,6 +1,6 @@
 ---
-title: GCCR surveys
-description: Participate in the GCCR study on respiratory illness (e.g COVID-19, influenza, flu) and their effect on taste and smell !
+title: GCCR studies
+description: Participate in the GCCR studies on respiratory illness (e.g COVID-19, flu, cold) and their effect on taste and smell !
 layout: survey-base
 sitemap:
   priority: 0.9
@@ -20,10 +20,15 @@ sitemap:
         <div class="w-100 pb-1"></div>
           
         <h2 id="sequence" class="section-heading text-uppercase text-left pt-3"></h2>
+        <p class="h4 text-uppercase text-left pt-3">Participate in the GCCR studies</p>
         <p class="text-muted text-left"> 
-          Have you had a respiratory illness of any kind recently? 
-          Willing to share a bit of information about your experiences? 
-          It’s easy and takes about 10 minutes. 
+          We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell & taste.  
+        </p>
+        <p class="text-muted text-left"> 
+          You can take two studies. A survey and a self-check with items that you can find in your home. 
+        </p>
+        <p class="text-muted text-left"> 
+          Click on the language of your choosing to know more!
         </p>
         {% assign btn_class = "btn btn-lg btn-primary btn-block" %}
         {% include survey-links.html %}
@@ -35,14 +40,14 @@ sitemap:
     <div class="row col-lg-12 text-center">
       {% include share-survey.html %}
     </div>
-
-    <div class="py-1">
-      <p class="text-muted text-left">This study has been approved by the human subjects office at Penn State University in the United States of America, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</p>
+    <div class="py-5 col-lg-12 text-right">
+        <a href="/index.html">← GCCR Homepage</a>
     </div>
-
   </div>
 
-</section>
+<div class="container text-center pb-3">
+    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
+</div>
 
 {% assign hello_array = site.surveys | where_exp: "item", "item.language != 'English'" | sort: "title" | map: "hello" | uniq | join: ";" %}
 <script>

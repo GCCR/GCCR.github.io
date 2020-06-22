@@ -24,22 +24,25 @@ layout: survey-base
         
         {% if page.take_self_check %}
         <!-- MCQ that takes users to the right tool -->
-        <div class="text-left">
+        
+        <div style="text-align: center;">
+            <div style="display: inline-block; text-align: left;">
 
-          {% for choice in page.self_check_choices %}
-          {% if forloop.index == 1 or forloop.index == 2 %}
-            {% assign data_target = "#ModalSurvey" %}
-          {% else %}
-            {% assign data_target = "#ModalSelfCheck" %}
-          {% endif %}
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}" data-toggle="modal" data-target="{{ data_target }}">
-            <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
-              {{ choice }}
-            </label>
-          </div>
-          {% endfor %}
+              {% for choice in page.self_check_choices %}
+              {% if forloop.index == 1 or forloop.index == 2 %}
+                {% assign data_target = "#ModalSurvey" %}
+              {% else %}
+                {% assign data_target = "#ModalSelfCheck" %}
+              {% endif %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}" data-toggle="modal" data-target="{{ data_target }}">
+                <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
+                  {{ choice }}
+                </label>
+              </div>
+              {% endfor %}
 
+            </div>
         </div>
 
         <div style="height: 5em;"></div>

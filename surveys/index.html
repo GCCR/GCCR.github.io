@@ -22,7 +22,7 @@ sitemap:
         <h2 id="sequence" class="section-heading text-uppercase text-left pt-3"></h2>
         <p class="h4 text-uppercase text-left pt-3">Participate in the GCCR studies</p>
         <p class="text-muted text-left"> 
-          We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell & taste.  
+          We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell &amp; taste.  
         </p>
         <p class="text-muted text-left"> 
           You can take two studies. A survey and a self-check with items that you can find in your home. 
@@ -46,7 +46,7 @@ sitemap:
   </div>
 
 <div class="container text-center pb-3">
-    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
+    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA. Data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
 </div>
 
 {% assign hello_array = site.surveys | where_exp: "item", "item.language != 'English'" | sort: "title" | map: "hello" | uniq | join: ";" %}

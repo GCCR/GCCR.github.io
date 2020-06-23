@@ -14,7 +14,6 @@ layout: survey-base
     <div class="row">
       <div class="col-lg-12 text-center">
         
-        <!-- A better way to go about this should be thought of... -->
         <div class="img-fluid text-center">
         <a href="https://gcchemosensr.org/">
             <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
@@ -22,17 +21,95 @@ layout: survey-base
         </div>
           
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
+        
+        {% if page.take_self_check %}
+        <!-- MCQ that takes users to the right tool -->
+        
+        <div style="text-align: center;">
+            <div style="display: inline-block; text-align: left;">
+
+              {% for choice in page.self_check_choices %}
+              {% if forloop.index == 1 or forloop.index == 2 %}
+                {% assign data_target = "#ModalSurvey" %}
+              {% else %}
+                {% assign data_target = "#ModalSelfCheck" %}
+              {% endif %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}" data-toggle="modal" data-target="{{ data_target }}">
+                <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
+                  {{ choice }}
+                </label>
+              </div>
+              {% endfor %}
+
+            </div>
+        </div>
+
+        <div style="height: 5em;"></div>
+
+        <!-- Modal survey -->
+        <div class="modal fade" id="ModalSurvey" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalSurveyTitle">{{ page.description }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {{ page.self_check_response }}
+                <hr>
+                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal self-check -->
+        <div class="modal fade" id="ModalSelfCheck" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalSelfCheckTitle">{{ page.description }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {{ page.self_check_response }}
+                <hr>
+                <a href="{{ page.self_check_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_self_check }}</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
 
         <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
-        
+
+        {% if page.take_self_check %}
+
+        <a href="{{ page.self_check_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
+        {% endif %}
+
         {% include share-survey.html %}
 
         <div class="w-100 pt-1 pb-5"></div>
         
-        {{ page.hello }}
-        {{ content }}
-        
-        {{ page.contact }} ({{ emails | join: ", " }})
+        <div class="text-left">
+          {{ page.hello }}
+          {{ content }}
+          
+          {{ page.contact }} ({{ emails | join: ", " }})
+        </div>
 
       </div>
       <div class="py-5 col-lg-12 text-right">

@@ -1,6 +1,6 @@
 ---
-title: GCCR surveys
-description: Participate in the GCCR study on respiratory illness (e.g COVID-19, influenza, flu) and their effect on taste and smell !
+title: GCCR studies
+description: Participate in the GCCR studies on respiratory illness (e.g COVID-19, flu, cold) and their effect on taste and smell !
 layout: survey-base
 sitemap:
   priority: 0.9
@@ -18,17 +18,30 @@ sitemap:
         </div>
         <hr>
         <div class="w-100 pb-1"></div>
+        <h2 id="sequence" class="section-heading text-uppercase text-left pt-3"></h2> <!-- <- multi-language hello script -->
+        <p class="h4 text-uppercase text-left pt-3">Participate in the GCCR studies</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-muted text-left"> 
+                  We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell &amp; taste.  
+                </p>
+                </div>
+            <div class="col-lg-5 offset-lg-1">
+                <p class="text-muted text-left"> 
+                  You can take two studies. A survey and a self-check with items that you can find in your home. 
+                  <br>
+                  Click on the language of your choosing to know more!
+                </p>
+            </div>
+        </div>
           
-        <h2 id="sequence" class="section-heading text-uppercase pt-3" style="height: 200px;"></h2>
-        <p class="text-muted">The <a href="/" target="_blank">GCCR</a> is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic. </p>
-        <p class="text-muted">Our goal is to collect evidence-based information to combat the spread of COVID-19. Help us! </p>
         {% assign btn_class = "btn btn-lg btn-primary btn-block" %}
         {% include survey-links.html %}
       </div>
     </div>
     
     <div class="w-100 pb-1"></div>
-    <hr>
+    <hr/>
     <div class="row col-lg-12 text-center">
       {% include share-survey.html %}
     </div>
@@ -36,14 +49,14 @@ sitemap:
         <a href="/index.html">← GCCR Homepage</a>
     </div>
   </div>
-</section>
 
 <div class="container text-center pb-3">
-    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA, and these data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
+    <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA. Data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
 </div>
 
+{% assign hello_array = site.surveys | where_exp: "item", "item.language != 'English'" | sort: "title" | map: "hello" | uniq | join: ";" %}
 <script>
-  var textArray = ['Hello! Please select your language', '¡Hola! Por favor selecciona tu idioma', 'Ciao! Seleziona la tua lingua', 'Bonjour ! Veuillez sélectionner votre langue', 'Hello! Please select your language', 'Hallo! Bitte wählen Sie Ihre Sprache', 'こんにちは！ 言語を選択してください'];
+  var textArray = "Hello!;{{ hello_array }}".split(";");
   var index = 1;
   document.getElementById('sequence').innerHTML = textArray[0];
   setInterval(function(){        

@@ -11,7 +11,7 @@
 {% assign social_icons_class = "text-dark fa-3x" %}
 {% assign defaults = site.surveys | where_exp: "survey", "survey.language == 'English'" | first %}
 <!-- Empty section for spacing -->
-<div style="height: 10em;"></div>
+<div style="height: 5em;"></div>
 <div class="container col-lg-6 my-3">
   <div class="row text-muted">
     <h2 class="col text-center">{{ page.share_survey | default: defaults.share_survey }}</h2>
@@ -25,6 +25,6 @@
     <a class="col-2" target="_blank" href="/assets/{{ qr_path }}"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
   </div>
   <div class="row">
-    <p class="col text-center">Short link: <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
+    <p class="col text-center"><i class="text-dark fas fa-link mx-1"></i> <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
   </div>
 </div>

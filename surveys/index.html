@@ -21,18 +21,18 @@ sitemap:
         <h2 id="sequence" class="section-heading text-uppercase text-left pt-3"></h2> <!-- <- multi-language hello script -->
         <p class="h4 text-uppercase text-left pt-3">Participate in the GCCR studies</p>
         <div class="row">
-            <div class="col-lg-6">
-                <p class="text-muted text-left"> 
-                  We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell &amp; taste.  
-                </p>
-                </div>
-            <div class="col-lg-5 offset-lg-1">
-                <p class="text-muted text-left"> 
-                  You can take two studies. A survey and a self-check with items that you can find in your home. 
-                  <br>
-                  Click on the language of your choosing to know more!
-                </p>
-            </div>
+          <div class="col-lg-6">
+            <p class="text-muted text-left"> 
+              We are conducting world-wide scientific studies to assess the possible relationships between respiratory illness (e.g., COVID-19, influenza or the common cold) and their effects on smell &amp; taste.  
+            </p>
+          </div>
+          <div class="col-lg-5 offset-lg-1">
+            <p class="text-muted text-left"> 
+              You can take two studies. A survey and a self-check with items that you can find in your home. 
+              <br>
+              Click on the language of your choosing to know more!
+            </p>
+          </div>
         </div>
           
         {% assign btn_class = "btn btn-lg btn-primary btn-block" %}
@@ -50,9 +50,9 @@ sitemap:
     </div>
   </div>
 
-<div class="container text-center pb-3">
+  <div class="container text-center pb-3">
     <p class="text-muted"><i>This study has been approved by the human subjects office at Penn State in the USA. Data will be collected and stored on EU and US data-privacy laws compliant servers located in Canada.</i></p>
-</div>
+  </div>
 
 {% assign hello_array = site.surveys | where_exp: "item", "item.language != 'English'" | sort: "title" | map: "hello" | uniq | join: ";" %}
 <script>

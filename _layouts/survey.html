@@ -25,17 +25,12 @@ layout: survey-base
         {% if page.take_self_check %}
         <!-- MCQ that takes users to the right tool -->
         
-        <div style="text-align: center;">
+        <div class="text-center">
             <div style="display: inline-block; text-align: left;">
 
               {% for choice in page.self_check_choices %}
-              {% if forloop.index == 1 or forloop.index == 2 %}
-                {% assign data_target = "#ModalSurvey" %}
-              {% else %}
-                {% assign data_target = "#ModalSelfCheck" %}
-              {% endif %}
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}" data-toggle="modal" data-target="{{ data_target }}">
+                <input class="form-check-input mcq-tools" type="checkbox" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}">
                 <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
                   {{ choice }}
                 </label>
@@ -43,6 +38,10 @@ layout: survey-base
               {% endfor %}
 
             </div>
+            <div class="w100"></div>
+            <button type="button" class="btn btn-default btn-lg" id="mcq-btn">
+              <i class="fa-lg fas fa-arrow-circle-right"></i>
+            </button>
         </div>
 
         <div style="height: 5em;"></div>
@@ -59,11 +58,8 @@ layout: survey-base
               </div>
               <div class="modal-body">
                 {{ page.self_check_response }}
-                <hr>
+                <hr/>
                 <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -81,15 +77,54 @@ layout: survey-base
               </div>
               <div class="modal-body">
                 {{ page.self_check_response }}
-                <hr>
+                <hr/>
                 <a href="{{ page.self_check_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_self_check }}</a>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Modal both -->
+        <div class="modal fade" id="ModalBoth" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalBothTitle">{{ page.description }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                {{ page.self_check_response }}
+                <hr/>
+                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+                <a href="{{ page.self_check_url }}" class=" btn btn-lg btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function(){
+            $("#mcq-btn").click(function(){
+              var choices = [];
+        
+              if ($("#mcq-tools-1").is(':checked') || $("#mcq-tools-2").is(':checked')) {
+                choices.push("#ModalSurvey");
+              } 
+              if ($("#mcq-tools-3").is(':checked') || $("#mcq-tools-4").is(':checked') || $("#mcq-tools-5").is(':checked')) {
+                choices.push("#ModalSelfCheck");
+              }
+        
+              if (choices.includes("#ModalSurvey") && choices.includes("#ModalSelfCheck")) {
+                var choice = "#ModalBoth";
+              } else {
+                var choice = choices[0];
+              }
+              $(choice).modal();
+            });
+          });
+        </script>
 
         {% endif %}
 

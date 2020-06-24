@@ -11,8 +11,8 @@ leader_email: k.ohla@fz-juelich.de
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=370465b8-49ef-4d1b-82cc-164593387d69
 short_url: http://bit.ly/2yFCwLJ
 self_check_url: http://riech-check.de/
-take_self_check: MACHEN SIE DEN RIECH-&-SCHMECK-CHECK
-self_check_response: "Based on your response, you are invited to"
+take_self_check: Machen Sie den Riech-&-Schmeck-Check
+self_check_response: Basierend auf Ihrer Antwort empfehlen wir Ihnen
 self_check_choices: [
     "Ich habe aktuell eine Atemwegserkrankung (COVID-19, Grippe, Erkältung)",
     "Ich hatte in den letzten 14 Tagen eine Atemwegserkrankung (COVID-19, Grippe, Erkältung)",

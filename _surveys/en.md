@@ -12,7 +12,7 @@ survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=86572382-0ee
 short_url: http://bit.ly/343fERK
 self_check_url: http://riech-check.de/
 take_self_check: Take the self-check
-self_check_response: "Based on your response, you are invited to"
+self_check_response: Based on your response, you are invited to
 self_check_choices: [
     "I am currently sick with a respiratory illness (COVID-19, flu, cold)",
     "I have been sick in the past two weeks with a respiratory illness (COVID-19, flu, cold)",

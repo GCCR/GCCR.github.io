@@ -8,6 +8,8 @@ take_survey: Take the survey
 share_survey: Share the survey
 contact: For more information about this study, please contact John Hayes
 leader_email: jeh40@psu.edu
+contact2: For more information about our smell & taste check, please contact Kathrin Ohla
+leader_email2: info@riech-check.de
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=86572382-0eec-447a-87ca-eb5c4d4d4d52
 short_url: http://bit.ly/343fERK
 self_check_url: http://riech-check.de/

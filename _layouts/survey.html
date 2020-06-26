@@ -38,8 +38,9 @@ layout: survey-base
               {% endfor %}
 
               <div class="form-check">
+                
                 <button type="button" class="form-check-input btn btn-default btn-lg" id="mcq-btn">
-                  <i class="fa-lg fas fa-arrow-circle-right"></i>
+                  <i class="fa-lg fas fa-arrow-circle-right"> Choose my study!  </i>
                 </button>
               </div>
             </div>
@@ -104,14 +105,15 @@ layout: survey-base
             </div>
           </div>
         </div>
-
+        
+        <!-- Logic behind the mcq tool -->
         <script>
           $(document).ready(function(){
             $("#mcq-btn").click(function(){
               var choices = [];
         
               if ($("#mcq-tools-1").is(':checked') || $("#mcq-tools-2").is(':checked')) {
-                choices.push("#ModalSurvey");
+                choices.push("#ModalBoth");
               } 
               if ($("#mcq-tools-3").is(':checked') || $("#mcq-tools-4").is(':checked') || $("#mcq-tools-5").is(':checked')) {
                 choices.push("#ModalSelfCheck");
@@ -128,13 +130,15 @@ layout: survey-base
         </script>
 
         {% endif %}
-
+        
+        <!-- Hide survey buttons so folks use the MCQ 
         <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
 
         {% if page.take_self_check %}
 
         <a href="{{ page.self_check_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
         {% endif %}
+        -->
 
         {% include share-survey.html %}
 

@@ -15,38 +15,33 @@ layout: survey-base
       <div class="col-lg-12 text-center">
         
         <div class="img-fluid text-center">
-        <a href="https://gcchemosensr.org/">
-            <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
-        </a>
+          <a href="{{ site.url }}">
+              <img src="/assets/img/logo_draft_white.jpg" class="rounded" width="300" height="170" alt="GCCR Logo">
+          </a>
         </div>
+        <hr/>
           
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
         
-        {% if page.take_self_check %}
+        {% if page.take_selfcheck %}
         <!-- MCQ that takes users to the right tool -->
         
         <div class="text-center">
             <div style="display: inline-block; text-align: left;">
 
-              {% for choice in page.self_check_choices %}
+              {% for choice in page.selfcheck_choices %}
               <div class="form-check">
-                <input class="form-check-input mcq-tools" type="checkbox" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}">
+                <input class="form-check-input mcq-tools" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}">
                 <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
                   {{ choice }}
                 </label>
               </div>
               {% endfor %}
 
-              <div class="form-check">
-                
-                <button type="button" class="form-check-input btn btn-default btn-lg" id="mcq-btn">
-                  <i class="fa-lg fas fa-arrow-circle-right"> Choose my study!  </i>
-                </button>
-              </div>
             </div>
         </div>
 
-        <div style="height: 7em;"></div>
+        <div style="height: 5em;"></div>
 
         <!-- Modal survey -->
         <div class="modal fade" id="ModalSurvey" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
@@ -59,7 +54,7 @@ layout: survey-base
                 </button>
               </div>
               <div class="modal-body">
-                {{ page.self_check_response }}
+                {{ page.selfcheck_response }}
                 <hr/>
                 <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
               </div>
@@ -78,9 +73,9 @@ layout: survey-base
                 </button>
               </div>
               <div class="modal-body">
-                {{ page.self_check_response }}
+                {{ page.selfcheck_response }}
                 <hr/>
-                <a href="{{ page.self_check_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_self_check }}</a>
+                <a href="{{ page.selfcheck_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_selfcheck }}</a>
               </div>
             </div>
           </div>
@@ -97,48 +92,22 @@ layout: survey-base
                 </button>
               </div>
               <div class="modal-body">
-                {{ page.self_check_response }}
+                {{ page.selfcheck_response }}
                 <hr/>
-                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
-                <a href="{{ page.self_check_url }}" class=" btn btn-lg btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
+                <a href="{{ page.selfcheck_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_selfcheck }}</a>
+                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase mt-1" target="_blank">{{ page.take_survey }}</a>
               </div>
             </div>
           </div>
         </div>
         
         <!-- Logic behind the mcq tool -->
-        <script>
-          $(document).ready(function(){
-            $("#mcq-btn").click(function(){
-              var choices = [];
-        
-              if ($("#mcq-tools-1").is(':checked') || $("#mcq-tools-2").is(':checked')) {
-                choices.push("#ModalBoth");
-              } 
-              if ($("#mcq-tools-3").is(':checked') || $("#mcq-tools-4").is(':checked') || $("#mcq-tools-5").is(':checked')) {
-                choices.push("#ModalSelfCheck");
-              }
-        
-              if (choices.includes("#ModalSurvey") && choices.includes("#ModalSelfCheck")) {
-                var choice = "#ModalBoth";
-              } else {
-                var choice = choices[0];
-              }
-              $(choice).modal();
-            });
-          });
-        </script>
+        <script src="/assets/js/mcq-tool.js"></script>
 
-        {% endif %}
-        
-        <!-- Hide survey buttons so folks use the MCQ 
+        {% else %}
         <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
 
-        {% if page.take_self_check %}
-
-        <a href="{{ page.self_check_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase mt-1" target="_blank">{{ page.take_self_check }}</a>
         {% endif %}
-        -->
 
         {% include share-survey.html %}
 
@@ -149,6 +118,10 @@ layout: survey-base
           {{ content }}
           
           {{ page.contact }} ({{ emails | join: ", " }})
+          {% if page.take_selfcheck %}
+          <br/>
+          {{ page.contact_selfcheck }} (<a href="mailto:{{ page.email_selfcheck }}">{{ page.email_selfcheck }}</a>)
+          {% endif %}
         </div>
 
       </div>

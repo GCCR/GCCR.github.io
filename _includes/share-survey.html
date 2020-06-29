@@ -13,9 +13,6 @@
 <!-- Empty section for spacing -->
 <div style="height: 5em;"></div>
 <div class="container col-lg-6 my-3">
-  <div class="row text-muted">
-    <h2 class="col text-center">{{ page.share_survey | default: defaults.share_survey }}</h2>
-  </div>
   <div class="row align-items-center pt-1 pb-3">
     <a class="col-2" target="_blank" href="https://twitter.com/share?url={{ shared_link | url_encode }}&amp;text={{ page.description | url_encode }}&amp;hashtags=covid19,smell,taste,GCCR&amp;via=GCChemosensoryR"><i class="{{ social_icons_class }} fab fa-twitter"></i></a>
     <a class="col-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shared_link | url_encode }}"><i class="{{ social_icons_class }} fab fa-facebook"></i></a>
@@ -25,6 +22,17 @@
     <a class="col-2" target="_blank" href="/assets/{{ qr_path }}"><i class="{{ social_icons_class }} fas fa-qrcode"></i></a>
   </div>
   <div class="row">
+    <h2 class="col text-center text-muted">{{ page.share_survey | default: defaults.share_survey }}</h2>
+  </div>
+  <div class="row">
     <p class="col text-center"><i class="text-dark fas fa-link mx-1"></i> <a target="_blank" href="{{ short_url }}">{{ short_url }}</a></p>
   </div>
+  {% if page.share_selfcheck %}
+  <div class="row">
+    <h2 class="col text-center text-muted">{{ page.share_selfcheck }}</h2>
+  </div>
+  <div class="row">
+    <p class="col text-center"><i class="text-dark fas fa-link mx-1"></i> <a target="_blank" href="{{ page.selfcheck_url }}">{{ page.selfcheck_url }}</a></p>
+  </div>
+  {% endif %}
 </div>

@@ -6,8 +6,8 @@ language: German
 hello: Hallo!
 take_survey: Nehmen Sie an der Umfrage teil
 share_survey: Teilen Sie die Umfrage
-contact: Für weitere Informationen zur Studie kontaktieren Sie bitte Kathrin Ohla
-leader_email: k.ohla@fz-juelich.de
+contact: Für weitere Informationen zur Umfrage kontaktieren Sie bitte John Hayes
+leader_email: jeh40@psu.edu
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=370465b8-49ef-4d1b-82cc-164593387d69
 short_url: http://bit.ly/2yFCwLJ
 selfcheck_url: http://riech-check.de/
@@ -26,4 +26,4 @@ email_selfcheck: info@riech-check.de
 ---
 Das GCCR ist eine Gruppe von 600 ForscherInnen, ÄrztInnen, klinischen MitarbeiterInnen und PatientenvertreterInnen aus 50 Ländern. Das Consortium wurde als Antwort auf die COVID19-Pandemie gegründet. 
 
-Unser Ziel ist die Sammlung von Informationen, um Berichte von Problemen bei der Geruchs- und Geschmackswahrnehmung im Zusammenhang mit COVID19 besser zu verstehen.
+Unser Ziel ist die evidenz-basierte Sammlung von Informationen, um die Ausbreitung von COVID-19 zu bekämpfen.

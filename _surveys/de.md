@@ -6,8 +6,8 @@ language: German
 hello: Hallo!
 take_survey: Nehmen Sie an der Umfrage teil
 share_survey: Teilen Sie die Umfrage
-contact: Für weitere Informationen zur Umfrage kontaktieren Sie bitte John Hayes
-leader_email: jeh40@psu.edu
+contact: Für weitere Informationen zur Umfrage kontaktieren Sie bitte Kathrin Ohla
+leader_email: k.ohla@fz-juelich.de
 survey_url: https://psusensory.compusensecloud.com/edu/login.aspx?t=370465b8-49ef-4d1b-82cc-164593387d69
 short_url: http://bit.ly/2yFCwLJ
 selfcheck_url: http://riech-check.de/

@@ -4,6 +4,7 @@ description: Our open-science research projects related to COVID-19 include a qu
 sitemap:
   priority: 0.8
 ---
+<script src="/assets/vendor/list/list.min.js"></script>
 <!-- Projects -->
 <section class="page-section" id="intro">
     <div class="container">
@@ -69,15 +70,54 @@ sitemap:
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                  <h3> COVID-19 related </h3>
-                  <p> R. Pellegrino, K. W. Cooper, A. Di Pizio, S. Bhutani, V. Parma, (2020) Coronaviruses and the Chemical Senses: Past, Present, and Future. doi: <a href="https://doi.org/10.1093/chemse/bjaa031">doi.org/10.1093/chemse/bjaa031</a></p>
-                  
-                  <p> <a href="https://www.ncbi.nlm.nih.gov/research/coronavirus/">LitCovid</a> is a curated literature hub for tracking up-to-date scientific information about the 2019 novel Coronavirus. </p>
-                  
-                  <h3> Pre-prints *  </h3>
-                  <p class="text-muted"> <i>* Pre-prints are not peer reviewed, which means that other scientists have not evaluated the quality of the research and the validity of the conclusions. Such publications should be interpreted with caution. </i></p>
-                  <p> GCCR (2020) More than just smell - COVID-19 is associated with severe impairment of smell, taste, and chemesthesis. doi: <a href="https://www.medrxiv.org/content/10.1101/2020.05.04.20090902v2">10.1101/2020.05.04.20090902v2</a> </p>
-                    
+
+                  <div id="literature-list">
+                    <form class="form-inline mb-sm-2">
+                      <input type="text" class="search form-control mr-sm-2" placeholder="Search"/>
+                      <div class="dropdown mr-sm-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Sort by
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownSortButton">
+                          <button type="button" class="sort dropdown-item" data-sort="dateAdded">Date added</button>
+                          <button type="button" class="sort dropdown-item" data-sort="year">Year</button>
+                          <button type="button" class="sort dropdown-item" data-sort="journal">Journal</button>
+                          <button type="button" class="sort dropdown-item" data-sort="authors">Author</button>
+                        </div>
+                      </div>
+                      <div class="ml-auto input-group">
+                        <div class="mr-sm-2">Filter tags:</div>
+                        <div>
+                          <button type="button" class="filter btn btn-sm color-covid19">COVID-19</button>
+                          <button type="button" class="filter btn btn-sm color-viral">Viral</button>
+                          <button type="button" class="filter btn btn-sm color-case-report">Case report</button>
+                          <button type="button" class="filter btn btn-sm color-preprint">Preprint</button>
+                          <button type="button" class="filter btn btn-sm color-genes">Genes</button>
+                          <button type="button" class="filter btn btn-sm color-smell">Smell</button>
+                          <button type="button" class="filter btn btn-sm color-taste">Taste</button>
+                          <button type="button" class="filter btn btn-sm btn-light">Reset</button>
+                        </div>
+                      </div>
+                    </form>
+                    <ul class="list list-group list-group-flush">
+                      {% for item in site.data.literature %}
+                      <li class="list-group-item py-2">
+                        {% for tag in item.tags %}
+                        <span class="badge badge-pill color-{{ tag | slugify }} float-right ml-1"> </span>
+                        <span hidden class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
+                        {% endfor %}
+                        <h6 class="title my-0">{{ item.title }}</h6>
+                        <span class="authors">{{ item.authors }}</span>
+                        {% if item.year %}<span class="year">({{ item.year }})</span>{% endif %}
+                        <span class="journal font-italic">{{ item.journal }}</span>
+                        <span hidden class="dateAdded">{{ item.dateAdded }}</span>
+                        {% if item.DOI %}<a href="https://doi.org/{{ item.DOI }}" class="doi">{{ item.DOI }}</a>{% endif %}
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    <ul class="pagination"></ul>
+                  </div>
+                  <p>This section was last updated {{ site.data.last_update }}</p>
                 </div>
               </div>
             </div>
@@ -86,3 +126,4 @@ sitemap:
   </div>
   </div>
 </section>
+<script src="/assets/js/literature.js"></script>

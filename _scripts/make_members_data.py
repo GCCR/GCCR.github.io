@@ -11,6 +11,7 @@ from bokeh.models import (
     GeoJSONDataSource, ColumnDataSource, HoverTool, ColorBar, WheelZoomTool,
     LinearColorMapper, CategoricalColorMapper, Legend, LegendItem, Title,
 )
+import geckodriver_autoinstaller
 
 # search for the excel file
 if len(sys.argv) > 1:
@@ -18,12 +19,15 @@ if len(sys.argv) > 1:
 else:
 	raise FileNotFoundError("Please provide the path to the Excel file")
 
+# install geckodriver
+geckodriver_autoinstaller.install()
+
 # read country shapes
 def country_reader(path):
-    geo = gpd.read_file(os.path.join("natural-earth-vector", path))
+    geo = gpd.read_file(os.path.join("_scripts/natural-earth-vector", path))
     # restrict to the columns needed
-    geo = geo[['NAME_CIAWF', 'GEOUNIT', 'geometry']]
-    geo.columns = ['Country', 'Long name', 'geometry']
+    geo = geo[['NAME_CIAWF', 'GEOUNIT', 'geometry', 'CONTINENT']]
+    geo.columns = ['Country', 'Long name', 'geometry', 'Continent']
     geo["Country"].fillna(geo["Long name"], inplace=True)
     geo.drop(columns="Long name", inplace=True)
     return geo
@@ -83,21 +87,11 @@ print(len(members), "members registered in", members["Country"].nunique(), "coun
 print("***")
 
 # group members by country
-def regroup_by_country(s, max_n=8): # stop displaying members on the map after max_n
-    labels = [[str(i) for i in row] for row in s[["Member","Institution"]].values[:max_n]]
-    members_list = "<br/>".join([f"{i[0]} - {i[1]}" for i in labels])
-    members_list += "<br/>and more..." if len(s) > max_n else ""
-    return pd.Series({
-        "Country": s["Country"].values[0],
-        "Members": members_list,
-        "N_members": len(s),
-    })
-group = members.groupby(["Country"], as_index=False).apply(regroup_by_country)
+group = members.groupby("Country", as_index=False).agg({"Member":"count"}).rename(columns={"Member": "N_members"})
 
 # merge country shapes and members
 df = geo.merge(group, on="Country", how="left")
 df["N_members"] = df["N_members"].fillna(0).astype(int)
-df["Members"] = df["Members"].fillna("")
 
 # check if we lost some members when merging
 assert group["N_members"].sum() == df["N_members"].sum(), f"""\
@@ -110,7 +104,7 @@ Country names used by natural-earth-vector:
 """
 
 # create the map
-output_file("../assets/html/members-map.html", title="GCCR members", mode="inline")
+output_file("assets/html/members-map.html", title="GCCR members", mode="inline")
 p = figure(
     height=550, width=950,
     title="Members of the Global Consortium for Chemosensory Research",
@@ -125,7 +119,6 @@ hover = HoverTool(
     tooltips=[
         ('Country', '@Country'),
         ('Number of members','@N_members'),
-        #('Members','@Members{safe}'),
     ])
 p.add_tools(hover)
 # Add wheel zoom
@@ -157,19 +150,26 @@ legend = Legend(border_line_width=0, spacing=20, items=[
 p.add_layout(legend, "below")
 # date of update
 last_update = Title(
-    text=f"Last update: {datetime.now().strftime('%d %b %Y')} - {len(members)} members in {members['Country'].nunique()} countries",
+    text=f"Last update: {datetime.now().strftime('%B %d, %Y')} - {len(members)} members in {members['Country'].nunique()} countries",
     text_font_size='10pt'
 )
 p.add_layout(last_update, "below")
 # export to png (might fail)
 try:
-	export_png(p, filename="../assets/img/members-map.png", width=950, height=600)
+	export_png(p, filename="assets/img/members-map.png", width=950, height=600)
 except Exception as e:
-	print("Could not create a PNG of the map. Check the error below:")
+	print("Skipped the creation of a PNG of the map as an error occured:")
 	print(e)
 # export HTML
 p.sizing_mode = "scale_width"
 save(p)
+
+# create summary table of members
+df = geo.merge(members, on="Country", how="left")
+df.drop(columns=["geometry","Institution"], inplace=True)
+df = df.groupby(["Continent", "Country"]).agg({"Member":"count"}).rename(columns={"Member": "Number of members"}).sort_values(["Continent", "Number of members", "Country"], ascending=[True, False, True])
+df = df[df["Number of members"] > 0]
+df.to_excel("assets/data/members-summary.xlsx")
 
 # standardize institution names for the YML
 def standardize(x):
@@ -185,7 +185,7 @@ members["Institution"] = members["Institution"].apply(standardize)
 websites = [
 	("Keiland W. Cooper", "https://kwcooper.xyz"),
 	("Valentina Parma", "https://vparma.netlify.com/"),
-	("Cédric Bouysset", "https://cbouy.github.io"),
+	("Cédric Bouysset", "https://cedric.bouysset.net"),
 	("John Hayes", "https://foodscience.psu.edu/directory/jeh40"),
 	("Masha Niv", "https://biochem-food-nutrition.agri.huji.ac.il/mashaniv"),
 	("Kathrin Ohla", "https://www.kathrinohla.de/"),
@@ -199,7 +199,7 @@ def pandas_row_to_yml(s):
 	if pd.notna(s["Website"]):
 		x += f"  url: {s['Website']}\n"
 	return x
-with open("../_data/members.yml", "w") as f:
+with open("_data/members.yml", "w") as f:
 	for i, row in members.iterrows():
 		f.write(pandas_row_to_yml(row))
 print("Done")

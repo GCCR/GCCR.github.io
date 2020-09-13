@@ -1,6 +1,6 @@
 # How to update the members map and table
 
-This process requires having a Python installation with quite a few packages, and being a bit confortable with a command line interface.
+This process is automated on the website and runs everyday, but if you wish to try it locally, follow this guide. Using the script requires a specific python installation detailed below, and being a bit confortable with a command line interface.
 
 1. **Installing Python**
 
@@ -13,13 +13,23 @@ Make sure conda is available in your terminal by running the following command: 
 
 2. **Installing the Python packages**
 
-Now we will install all the necessary packages in a separate environment called `gccr`. Go to the `_script` folder and type `conda env create -f conda_environment.yml`. This will download all the packages in a specific version and install them in `gccr`.
+Now we will install all the necessary packages in a separate environment called `gccr`. In your terminal, run the following commands:
+
+```bash
+ conda create -n gccr python=3.8.5 --yes
+ conda activate gccr
+ pip install -r _scripts/requirements.txt
+```
+This will download all the packages in a specific version and install them in the `gccr` conda environment.
+
+You also need to install firefox for the PNG of the members map to be generated. For Ubuntu: `sudo apt-get install firefox`
 
 3. **Running the script**
 
-Before you're able to update the members map and table, you will need to activate the `gccr` environment by typing `conda activate gccr`. You will have to do this everytime you close the current terminal.
+Make sure the `gccr` environment is active (if not, type `conda activate gccr`).
 
-To run the update, make sure you are in the `_script` folder, then type `python create_members.py PATH_TO_FILE` where `PATH_TO_FILE` is the location of the Excel file (usually called agreement_signed.xlsx). The output files will automatically go to the appropriate location:
+Type `python _scripts/make_members_data.py PATH_TO_FILE` where `PATH_TO_FILE` is the location of the Excel file (usually called members-{{date}}.xlsx). The output files will automatically go to the appropriate location:
 * assets/html/members-map.html
 * assets/img/members-map.png
+* assets/data/members-summary.xlsx
 * _data/members.yml

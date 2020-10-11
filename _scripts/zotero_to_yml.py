@@ -6,9 +6,6 @@ import re
 import os
 from datetime import datetime
 
-ZOTERO_KEY = os.environ["ZOTERO_KEY"]
-
-z = zotero.Zotero(library_id=2503085, library_type="group", api_key=ZOTERO_KEY)
 
 COVID = re.compile(r'\bcovid|\bcoronavirus\b|\bsars\b')
 SMELL = re.compile(r'\bolfact|\bsmell\b|osmia\b')
@@ -17,6 +14,7 @@ CASE_REPORT = re.compile(r'\bcase\-?report\b')
 VIRAL = re.compile(r'\bviral\b')
 PREPRINT = re.compile(r'\bpreprint\b')
 GENES = re.compile(r'\bgenes?\b|\bgenetic\b')
+
 
 def get_tags(tags):
     """Convert a dict of Zotero tags to a standardized list of tags"""
@@ -35,11 +33,8 @@ def get_tags(tags):
             norm.append(tag)
     return norm
 
-publications = []
 
-for item in z.everything(z.items(sort="dateAdded", direction="desc")):
-    if item["data"].get("itemType") != "journalArticle":
-        continue
+def parse_item(item):
     data = {key: item["data"].get(key) for key in [
         "title", "creators", "publicationTitle", "journalAbbreviation", "date", "dateAdded", "DOI", "tags",
     ]}
@@ -47,7 +42,7 @@ for item in z.everything(z.items(sort="dateAdded", direction="desc")):
     authors = data.pop("creators")
     firstname = '. '.join(name[0] if len(name) else name
                           for name in authors[0]['firstName'].split())
-    name = f"{authors[0]['lastName']}, "{firstname}."
+    name = f"{authors[0]['lastName']}, {firstname}."
     name += " et al." if len(authors) > 1 else ""
     data["authors"] = name
     # abbreviate journal name if available
@@ -63,12 +58,27 @@ for item in z.everything(z.items(sort="dateAdded", direction="desc")):
         data["tags"] = get_tags(tags)
         if not data["tags"]:
             data.pop("tags")
+    return data
+
+
+ZOTERO_KEY = os.environ["ZOTERO_KEY"]
+z = zotero.Zotero(library_id=2503085, library_type="group", api_key=ZOTERO_KEY)
+
+publications = []
+for item in z.everything(z.items(sort="dateAdded", direction="desc")):
+    if item["data"].get("itemType") != "journalArticle":
+        continue
+    try:
+        data = parse_item(item)
+    except Exception as e:
+        print("[ERROR]", str(e))
+        continue
     # prepare to write
     if not data["DOI"]:
         data.pop("DOI")
         print(f"[WARNING] No DOI: {list(data.values())}")
     if not data["journal"]:
-        print(f"[ERROR] No journal: {list(data.values())}")
+        print(f"[WARNING] No journal: {list(data.values())}")
         continue
     publications.append(data)
 

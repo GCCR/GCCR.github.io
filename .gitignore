@@ -12,4 +12,6 @@ _site/
 .vscode
 _data/literature.yml
 _data/last_update.yml
+_data/members.yml
 assets/data/
+_scripts/export_env_keys.sh

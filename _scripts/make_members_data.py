@@ -1,6 +1,7 @@
 # imports
-import os, re
+import os, re, logging
 from datetime import datetime
+import html
 import pandas as pd
 import geopandas as gpd
 import seaborn as sns
@@ -14,6 +15,8 @@ from bokeh.models import (
 from googleapiclient.discovery import build
 import geckodriver_autoinstaller
 
+
+logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 
 # install geckodriver
 geckodriver_autoinstaller.install()
@@ -106,6 +109,12 @@ Country names used by natural-earth-vector:
 {geo["Country"]}
 """
 
+# standardize country names for the map
+def standardize(x):
+    x = str(x).strip()
+    return html.escape(x)
+df["Country"] = df["Country"].apply(standardize)
+
 # create the map
 output_file("assets/html/members-map.html", title="GCCR members", mode="inline")
 p = figure(
@@ -120,7 +129,7 @@ p.axis.visible = False
 # Add hover tool
 hover = HoverTool(
     tooltips=[
-        ('Country', '@Country'),
+        ('Country', '@Country{safe}'),
         ('Number of members','@N_members'),
     ])
 p.add_tools(hover)
@@ -174,16 +183,6 @@ df = df.groupby(["Continent", "Country"]).agg({"Member":"count"}).rename(columns
 df = df[df["Number of members"] > 0]
 df.to_excel("assets/data/members-summary.xlsx")
 
-# standardize institution names for the YML
-def standardize(x):
-    x = str(x).strip()
-    if x.startswith("'"):
-        x = '"%s"' % x
-    elif x.startswith('"'):
-        x = "'%s'" % x
-    return x
-members["Institution"] = members["Institution"].apply(standardize)
-
 # add website url to some members
 websites = [
 	("Keiland W. Cooper", "https://kwcooper.xyz"),
@@ -195,6 +194,18 @@ websites = [
 ]
 for name, url in websites:
 	members.loc[members["Member"] == name, "Website"] = url
+
+# standardize strings for HTML and YAML
+def standardize(x):
+    x = str(x).strip()
+    x = x.replace(":", "")
+    x = html.escape(x)
+    if x.startswith("&"):
+        x = '"%s"' % x
+    return x
+
+for col in ["Country", "Member", "Institution"]:
+    members[col] = members[col].apply(standardize)
 
 # output YML file
 def pandas_row_to_yml(s):

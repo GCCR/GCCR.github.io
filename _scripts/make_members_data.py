@@ -1,5 +1,5 @@
 # imports
-import os, sys, re
+import os, re
 from datetime import datetime
 import pandas as pd
 import geopandas as gpd
@@ -11,13 +11,9 @@ from bokeh.models import (
     GeoJSONDataSource, ColumnDataSource, HoverTool, ColorBar, WheelZoomTool,
     LinearColorMapper, CategoricalColorMapper, Legend, LegendItem, Title,
 )
+from googleapiclient.discovery import build
 import geckodriver_autoinstaller
 
-# search for the excel file
-if len(sys.argv) > 1:
-    members_excel = sys.argv[1]
-else:
-	raise FileNotFoundError("Please provide the path to the Excel file")
 
 # install geckodriver
 geckodriver_autoinstaller.install()
@@ -46,8 +42,15 @@ geo.loc[geo["Country"]=="Baykonur Cosmodrome","Country"] = "Kazakhstan"
 
 print(len(geo), "countries available for the map")
 
-# members data
-members = pd.read_excel(members_excel)
+# fetch Google Sheet for members data
+GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
+SPREADSHEET_ID = os.environ["SPREADSHEET_ID"]
+service = build("sheets", "v4", developerKey=GOOGLE_API_KEY)
+sheet = service.spreadsheets()
+result = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
+                            range='A:D').execute()
+values = result.get('values', [])
+members = pd.DataFrame(values[1:], columns=values[0])
 # remove empty lines
 empty = members[members["Full name"].isnull()]
 if len(empty) != 0:

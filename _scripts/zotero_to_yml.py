@@ -3,12 +3,12 @@
 from pyzotero import zotero
 import yaml
 import re
-import sys
+import os
 from datetime import datetime
 
-api_key = sys.argv[1]
+ZOTERO_KEY = os.environ["ZOTERO_KEY"]
 
-z = zotero.Zotero(library_id=2503085, library_type="group", api_key=api_key)
+z = zotero.Zotero(library_id=2503085, library_type="group", api_key=ZOTERO_KEY)
 
 COVID = re.compile(r'\bcovid|\bcoronavirus\b|\bsars\b')
 SMELL = re.compile(r'\bolfact|\bsmell\b|osmia\b')
@@ -74,5 +74,6 @@ with open("_data/literature.yml", "w") as f:
     yaml.dump(publications, f)
 
 with open("_data/last_update.yml", "w") as f:
-    today = datetime.utcnow()
-    f.write(today.strftime("%B %d, %Y"))
+    last_update = datetime.strptime(publications[0]["dateAdded"],
+                                    "%Y-%m-%dT%H:%M:%SZ")
+    f.write(last_update.strftime("%B %d, %Y"))

@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    # - name: Install dependencies for the members map
-    #   run: |
-    #     sudo apt-get update -y
-    #     sudo apt-get install -y firefox
+    - name: Install dependencies for the members map
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y firefox
     - name: Clone GitHub repo
       uses: actions/checkout@v2
     - name: Set up Python
@@ -37,11 +37,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r _scripts/requirements.txt
     - name: Run Zotero script
-      run: python _scripts/zotero_to_yml.py ${{ secrets.ZOTERO_KEY }}
-    # - name: Build members map and list
-    #   run: |
-    #     mkdir -p assets/data
-    #     python _scripts/make_members_data.py ${{ secrets.MEMBERS_URL }}
+      env:
+        ZOTERO_KEY: ${{ secrets.ZOTERO_KEY }}
+      run: python _scripts/zotero_to_yml.py
+    - name: Build members map and list
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+      run: |
+        mkdir -p assets/data
+        python _scripts/make_members_data.py
     - name: Build and deploy
       uses: helaili/jekyll-action@2.0.1
       env:

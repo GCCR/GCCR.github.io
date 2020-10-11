@@ -45,8 +45,9 @@ for item in z.everything(z.items(sort="dateAdded", direction="desc")):
     ]}
     # abbreviate list of authors
     authors = data.pop("creators")
-    name = f"{authors[0]['lastName']}, "
-           f"{'. '.join(name[0] if len(name) else name for name in authors[0]['firstName'].split())}."
+    firstname = '. '.join(name[0] if len(name) else name
+                          for name in authors[0]['firstName'].split())
+    name = f"{authors[0]['lastName']}, "{firstname}."
     name += " et al." if len(authors) > 1 else ""
     data["authors"] = name
     # abbreviate journal name if available

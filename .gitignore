@@ -155,6 +155,7 @@ dmypy.json
 .vscode
 _data/literature.yml
 _data/last_update.yml
+_data/committees.yml
 _data/members.yml
 assets/data/
 _scripts/export_env_keys.sh

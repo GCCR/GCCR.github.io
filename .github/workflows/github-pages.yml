@@ -47,6 +47,11 @@ jobs:
       run: |
         mkdir -p assets/data
         python _scripts/make_members_data.py
+    - name: Build committees section
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        COMMITTEES_SPREADSHEET_ID: ${{ secrets.COMMITTEES_SPREADSHEET_ID }}
+      run: python _scripts/make_committees_data.py
     - name: Build and deploy
       uses: helaili/jekyll-action@2.0.1
       env:

@@ -4,9 +4,12 @@ import logging
 import pandas as pd
 from googleapiclient.discovery import build
 import yaml
-from common import WEBSITES
 
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+
+# load personal websites
+with open("_data/websites.yml", "r") as f:
+    WEBSITES = yaml.load(f, Loader=yaml.BaseLoader)
 
 def member_url(member):
     name, *rest = member.split(" (")

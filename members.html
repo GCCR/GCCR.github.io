@@ -26,12 +26,12 @@ sitemap:
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                   {% for item in site.data.committees %}
-                    <div class="mt-4 text-center">
+                    <div class="mt-4 text-left">
                       <h3 class="">{{ item.committee }}</h3>
                       {% for item in item.listing %}
                         <h4 class="h4">{{ item.time }}</h4>
-                        <div class="d-flex justify-content-center">
-                          <p class="text-muted w-75">
+                        <div class="d-flex text-left">
+                          <p class="text-muted">
                             {{ item.members | join: ", " }}
                           </p>
                         </div>

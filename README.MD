@@ -1,12 +1,10 @@
+![GitHub Pages build status](https://github.com/GCCR/GCCR.github.io/workflows/Build%20and%20deploy%20Jekyll%20site%20to%20GitHub%20Pages/badge.svg)
+
 # ~ Official website of the [GCCR](https://GCCR.github.io) ~
 
 ## Contributing to the website
 
 :point_right: To add new survey links, edit [_data/survey-links.yml](./_data/survey-links.yml) and **be careful with the indentation !**
-
-### *For authors*
-
-Coming soon!
 
 ### *For developers*
 
@@ -50,6 +48,7 @@ I heavily suggest that you quickly go through [Jekyll's tutorial](https://jekyll
 
 4. **Organization of the repo**
 
+* `surveys` folder: all the translations for the surveys pages are located here
 * `_data` folder
   These files should **NOT** be modified manually, **except**:
   * To modify the links of the navigation bar, edit [_data/navigation.yml](./_data/navigation.yml)

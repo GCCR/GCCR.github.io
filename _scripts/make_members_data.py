@@ -14,6 +14,7 @@ from bokeh.models import (
 )
 from googleapiclient.discovery import build
 import geckodriver_autoinstaller
+import yaml
 
 
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
@@ -47,10 +48,10 @@ print(len(geo), "countries available for the map")
 
 # fetch Google Sheet for members data
 GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
-SPREADSHEET_ID = os.environ["SPREADSHEET_ID"]
+MEMBERS_SPREADSHEET_ID = os.environ["MEMBERS_SPREADSHEET_ID"]
 service = build("sheets", "v4", developerKey=GOOGLE_API_KEY)
 sheet = service.spreadsheets()
-result = sheet.values().get(spreadsheetId=SPREADSHEET_ID,
+result = sheet.values().get(spreadsheetId=MEMBERS_SPREADSHEET_ID,
                             range='A:D').execute()
 values = result.get('values', [])
 members = pd.DataFrame(values[1:], columns=values[0])
@@ -184,15 +185,9 @@ df = df[df["Number of members"] > 0]
 df.to_excel("assets/data/members-summary.xlsx")
 
 # add website url to some members
-websites = [
-	("Keiland W. Cooper", "https://kwcooper.xyz"),
-	("Valentina Parma", "https://vparma.netlify.com/"),
-	("Cédric Bouysset", "https://cedric.bouysset.net"),
-	("John Hayes", "https://foodscience.psu.edu/directory/jeh40"),
-	("Masha Niv", "https://biochem-food-nutrition.agri.huji.ac.il/mashaniv"),
-	("Kathrin Ohla", "https://www.kathrinohla.de/"),
-]
-for name, url in websites:
+with open("_data/websites.yml", "r") as f:
+    WEBSITES = yaml.load(f, Loader=yaml.BaseLoader)
+for name, url in WEBSITES.items():
 	members.loc[members["Member"] == name, "Website"] = url
 
 # standardize strings for HTML and YAML

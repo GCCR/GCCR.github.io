@@ -18,28 +18,26 @@ sitemap:
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Leadership team
+                    Committees
                   </button>
                 </h2>
               </div>
 
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                      <p class="text-muted">
-                        The leadership team is responsible for facilitating communication within the GCCR, organizing the GCCR meetings and coordinating the group’s efforts.
-                        The leadership committee is composed of a Chair and members, currently (in alphabetical order):
-                          <a href="https://foodscience.psu.edu/directory/jeh40" target="_blank" >John Hayes</a>; 
-                          Thomas Hummel; 
-                          Paule Joseph;
-                          Christine Kelly; 
-                          Steven Munger; 
-                          <a href="https://biochem-food-nutrition.agri.huji.ac.il/mashaniv" target="_blank" >Masha Niv</a>; 
-                          <a href="https://www.kathrinohla.de" target="_blank" >Kathrin Ohla </a>; 
-                          <a href="https://vparma.netlify.com/" target="_blank" >Valentina Parma</a> (chair); 
-                          Marta Yanina Pepino;
-                          Danielle R. Reed; 
-                          Maria Veldhuizen.
-                      </p>
+                  {% for item in site.data.committees %}
+                    <div class="mt-4 text-left">
+                      <h3 class="">{{ item.committee }}</h3>
+                      {% for item in item.listing %}
+                        <h4 class="h4">{{ item.time }}</h4>
+                        <div class="d-flex text-left">
+                          <p class="text-muted">
+                            {{ item.members | join: ", " }}
+                          </p>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}
                 </div> 
               </div>
             </div>

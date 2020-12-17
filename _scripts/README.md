@@ -24,12 +24,17 @@ This will download all the packages in a specific version and install them in th
 
 You also need to install firefox for the PNG of the members map to be generated. For Ubuntu: `sudo apt-get install firefox`
 
-3. **Running the script**
+3. **Running the scripts**
 
 Make sure the `gccr` environment is active (if not, type `conda activate gccr`).
 
-Type `python _scripts/make_members_data.py PATH_TO_FILE` where `PATH_TO_FILE` is the location of the Excel file (usually called members-{{date}}.xlsx). The output files will automatically go to the appropriate location:
-* assets/html/members-map.html
-* assets/img/members-map.png
-* assets/data/members-summary.xlsx
-* _data/members.yml
+Download the file named `github_tokens.sh` from the Google Drive, place it in the `_scripts` folder
+
+Run the following commands:
+
+```bash
+source _scripts/github_tokens.sh
+python _scripts/make_members_data.py
+python _scripts/make_committees_data.py
+python _scripts/zotero_to_yml.py
+```

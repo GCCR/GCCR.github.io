@@ -1,4 +1,4 @@
-![GitHub Pages build status](https://github.com/GCCR/GCCR.github.io/workflows/Build%20and%20deploy%20Jekyll%20site%20to%20GitHub%20Pages/badge.svg)
+[![GitHub Pages build status](https://github.com/GCCR/GCCR.github.io/workflows/Build%20and%20deploy%20Jekyll%20site%20to%20GitHub%20Pages/badge.svg)](https://github.com/GCCR/GCCR.github.io/actions)
 
 # ~ Official website of the [GCCR](https://GCCR.github.io) ~
 

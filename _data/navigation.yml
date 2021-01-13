@@ -4,6 +4,8 @@
   link: /patient-orgs/
 - name: COVID-19 Projects
   link: /projects/
+- name: Webinars
+  link: /webinars/
 - name: Links
   link: /links/
 - name: Members
@@ -12,3 +14,4 @@
   link: /join/
 - name: Contact
   link: "#contact"
+  

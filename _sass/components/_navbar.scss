@@ -21,6 +21,23 @@
       color: $secondary;
     }
   }
+  .dropdown-menu {
+    background-color: $gray-900;
+    color: white;
+    border: 0;
+  }
+  .dropdown-item {
+    color: white;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+    &.active,
+    &:hover {
+      color: $primary;
+        }
+  }
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -71,3 +88,11 @@
     }
   }
 }
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+//.dropdown > .dropdown-toggle:active {
+//    /*Without this, clicking will make it sticky*/
+//    pointer-events: none;
+//}

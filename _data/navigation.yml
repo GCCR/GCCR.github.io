@@ -1,18 +1,23 @@
-- name: Surveys
-  link: /surveys/
 - name: For Patients
   link: /patient-orgs/
-- name: COVID-19 Projects
+- name: COVID-19 
   link: /projects/
+  sublinks:
+  - name: COVID-19 Projects
+    link: /projects/
+  - name: Surveys
+    link: /surveys/
+  - name: COVID-19 Links
+    link: /links/
 - name: Webinars
   link: /webinars/
-- name: Links
-  link: /links/
 - name: Members
   link : /members/
-- name: Join
-  link: /join/
+  sublinks:
+  - name: Our Members
+    link: /members/
+  - name: Join
+    link: /join/
 - name: Contact
   link: "#contact"
-  
   

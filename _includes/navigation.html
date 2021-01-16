@@ -12,10 +12,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
+        
         {% for item in site.data.navigation %}
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="{{ item.link }}">{{ item.name }}</a>
-        </li>
+            {% if item.sublinks %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.name }} <span class="caret"></span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for sublink in item.sublinks %}
+                        <a class="dropdown-item" href="{{ sublink.link }}">{{ sublink.name }}</a>
+                    {% endfor %}
+                    </div>
+                </li>
+            {% else %}
+        
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="{{ item.link }}">{{ item.name }}</a>
+              </li>
+            {% endif %}
         {% endfor %}
       </ul>
     </div>

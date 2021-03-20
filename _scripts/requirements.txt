@@ -17,7 +17,7 @@ geckodriver-autoinstaller==0.1.0
 geopandas==0.8.1
 idna==2.10
 jdcal==1.4.1
-Jinja2==2.11.2
+Jinja2==2.11.3
 kiwisolver==1.2.0
 lxml==4.5.2
 MarkupSafe==1.1.1

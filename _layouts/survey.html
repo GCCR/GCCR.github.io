@@ -22,8 +22,61 @@ layout: survey-base
         <hr/>
           
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
+
+        {% if page.survey_table %}
+        <!-- Table with icons -->
+        <div class="text-center">
+          <table class="survey-table">
+            <tr>
+              {% for col in page.survey_table.columns %}
+              <th>{{ col }}</th>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td><a href="{{ page.challenge_url }}">{{ page.survey_table.rows.challenge }}</a></td>
+              <td><img src="/assets/img/survey-icons/focus_challenge.png"></td>
+              <td><img src="/assets/img/survey-icons/clock_challenge.png"></td>
+              <td><img src="/assets/img/survey-icons/calendar_challenge.png"></td>
+              <td>
+                <img src="/assets/img/survey-icons/items_challenge_1.png">
+                <img src="/assets/img/survey-icons/items_challenge_2.png">
+              </td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.tracker_url }}">{{ page.survey_table.rows.tracker }}</a></td>
+              <td><img src="/assets/img/survey-icons/focus_tracker.png"></td>
+              <td><img src="/assets/img/survey-icons/clock_tracker.png"></td>
+              <td><img src="/assets/img/survey-icons/calendar_tracker.png"></td>
+              <td>
+                <img src="/assets/img/survey-icons/items_tracker_1.png">
+                <img src="/assets/img/survey-icons/items_tracker_2.png">
+                <img src="/assets/img/survey-icons/items_tracker_3.png">
+              </td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.selfcheck_url }}">{{ page.survey_table.rows.check }}</a></td>
+              <td><img src="/assets/img/survey-icons/focus_check.png"></td>
+              <td><img src="/assets/img/survey-icons/clock_check.png"></td>
+              <td><img src="/assets/img/survey-icons/calendar_check.png"></td>
+              <td>
+                <img src="/assets/img/survey-icons/items_check_1.png">
+                <img src="/assets/img/survey-icons/items_check_2.png">
+                <img src="/assets/img/survey-icons/items_check_3.png">
+              </td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.survey_url }}">{{ page.survey_table.rows.survey }}</a></td>
+              <td><img src="/assets/img/survey-icons/focus_survey.png"></td>
+              <td><img src="/assets/img/survey-icons/clock_survey.png"></td>
+              <td><img src="/assets/img/survey-icons/calendar_survey.png"></td>
+              <td>
+                <img src="/assets/img/survey-icons/items_survey.png">
+              </td>
+            </tr>
+          </table>
+        </div>
         
-        {% if page.take_selfcheck %}
+        {% elsif page.take_selfcheck %}
         <!-- MCQ that takes users to the right tool -->
         
         <div class="text-center">
@@ -105,14 +158,17 @@ layout: survey-base
         <script src="/assets/js/mcq-tool.js"></script>
 
         {% else %}
+        <!-- First survey -->
         <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
 
         {% endif %}
 
+        <!-- Share buttons -->
         {% include share-survey.html %}
 
         <div class="w-100 pt-1 pb-5"></div>
         
+        <!-- Description -->
         <div class="text-left">
           {{ page.hello }}
           {{ content }}

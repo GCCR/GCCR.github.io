@@ -23,6 +23,15 @@ selfcheck_choices: [
 ]
 contact_selfcheck: For more information about our smell & taste check, please contact Kathrin Ohla
 email_selfcheck: info@riech-check.de
+tracker_url: https://is.gd/smellandtastecheck_gccr
+challenge_url: https://www.google.com
+survey_table:
+  columns: ["", "Focus", "How long?", "How often?", "What do I need?"]
+  rows:
+    challenge: Smell & Taste Challenge
+    check: Smell & Taste Self Check
+    survey: GCCR Survey
+    tracker: Recovery Tracker
 ---
 The GCCR is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic.
 

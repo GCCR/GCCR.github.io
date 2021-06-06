@@ -18,6 +18,8 @@
     link: /members/
   - name: Join
     link: /join/
+- name: Publications
+  link: /pubs/
 - name: Contact
   link: "#contact"
   

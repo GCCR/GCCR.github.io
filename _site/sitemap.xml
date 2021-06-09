@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ar/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/bn/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/da/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/de/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/el/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/en/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/es/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/fa/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/fi/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/fr/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/gu/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/he/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/hi/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/it/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ja/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/kn/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ko/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ml/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/mr/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/nb/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/nl/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/pa/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/pt/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ru/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/sl/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/sv/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/ta/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/tr/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/zh-hant/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/surveys/zh/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+        <priority>0.6</priority>
+    </url>
+  
+
+  
+  
+    <url>
+      <loc>http://localhost:4000/surveys/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.9</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>1.0</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/join/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/links/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/members/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/patient-orgs/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/projects/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/publications/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/webinars/</loc>
+      
+        <lastmod>2021-06-09T07:02:19-07:00</lastmod>
+      
+      
+        <priority>0.8</priority>
+      
+    </url>
+  
+
+  
+  
+</urlset>

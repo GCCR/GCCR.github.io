@@ -9,7 +9,7 @@
   
 - title: 'Recent Smell Loss Is the Best Predictor of COVID-19 Among Individuals With Recent Respiratory Symptoms'
   abstract: 'In a preregistered, cross-sectional study, we investigated whether olfactory loss is a reliable predictor of COVID-19 using a crowdsourced questionnaire in 23 languages to assess symptoms in individuals self-reporting recent respiratory illness. We quantified changes in chemosensory abilities during the course of the respiratory illness using 0–100 visual analog scales (VAS) for participants reporting a positive (C19+; n = 4148) or negative (C19−; n = 546) COVID-19 laboratory test outcome. Logistic regression models identified univariate and multivariate predictors of COVID-19 status and post-COVID-19 olfactory recovery. Both C19+ and C19− groups exhibited smell loss, but it was significantly larger in C19+ participants (mean ± SD, C19+: −82.5 ± 27.2 points; C19−: −59.8 ± 37.7). Smell loss during illness was the best predictor of COVID-19 in both univariate and multivariate models (ROC AUC = 0.72). Additional variables provide negligible model improvement. VAS ratings of smell loss were more predictive than binary chemosensory yes/no-questions or other cardinal symptoms (e.g., fever). Olfactory recovery within 40 days of respiratory symptom onset was reported for ~50% of participants and was best predicted by time since respiratory symptom onset. We find that quantified smell loss is the best predictor of COVID-19 amongst those with symptoms of respiratory illness. To aid clinicians and contact tracers in identifying individuals with a high likelihood of having COVID-19, we propose a novel 0–10 scale to screen for recent olfactory loss, the ODoR-19. We find that numeric ratings ≤2 indicate high odds of symptomatic COVID-19 (4 < OR < 10). Once independently validated, this tool could be deployed when viral lab tests are impractical or unavailable.'
-  link: https://academic.oup.com/chemse/article/doi/10.1093/chemse/bjaa081/6048917
+  link: https://doi.org/10.1093/chemse/bjaa081
   materials: https://github.com/GCCR/gccr002
   journal: Chemical Senses
   yearPublished: 2020
@@ -18,7 +18,7 @@
   
 - title: 'Smell and taste changes are early indicators of the COVID-19 pandemic and political decision effectiveness'
   abstract: 'In response to the COVID-19 pandemic, many governments have taken drastic measures to avoid an overflow of intensive care units. Accurate metrics of disease spread are critical for the reopening strategies. Here, we show that self-reports of smell/taste changes are more closely associated with hospital overload and are earlier markers of the spread of infection of SARS-CoV-2 than current governmental indicators. We also report a decrease in self-reports of new onset smell/taste changes as early as 5 days after lockdown enforcement. Cross-country comparisons demonstrate that countries that adopted the most stringent lockdown measures had faster declines in new reports of smell/taste changes following lockdown than a country that adopted less stringent lockdown measures. We propose that an increase in the incidence of sudden smell and taste change in the general population may be used as an indicator of COVID-19 spread in the population.'
-  link: https://www.nature.com/articles/s41467-020-18963-y
+  link: https://doi.org/10.1038/s41467-020-18963-y
   materials: https://osf.io/gew7p/
   journal: Nature Communications
   yearPublished: 2020

@@ -22,7 +22,10 @@ layout: survey-base
         <hr/>
           
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
-
+        
+        <div class="text-center">
+            <div style="display: inline-block; text-align: left;">{{ page.table_instructions }}</div>
+        
         {% if page.survey_table %}
         <!-- Table with icons -->
         <div class="text-center">

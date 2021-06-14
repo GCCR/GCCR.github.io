@@ -160,23 +160,28 @@ layout: survey-base
         
         <!-- Description -->
         <div class="text-left">
-          {{ page.hello }}
-          {{ content }}
+      
           
-          {{ page.contact }} ({{ emails | join: ", " }})
-         
-          {% if page.take_selfcheck %}
-          <br/> 
-          {{ page.contact_selfcheck }} (<a href="mailto:{{ page.email_selfcheck }}">{{ page.email_selfcheck }}</a>)
-          {% endif %}
           {% if page.take_challenge %}
           <br/> 
           {{ page.contact_challenge }} (<a href="mailto:{{ page.email_challenge }}">{{ page.email_challenge}}</a>)
           {% endif %}
-          {% if page.take_tracker %}
+          
+           {% if page.take_tracker %}
           <br/> 
           {{ page.contact_tracker }} (<a href="mailto:{{ page.email_tracker }}">{{ page.email_tracker}}</a>)
           {% endif %}
+          
+          {% if page.take_selfcheck %}
+          <br/> 
+          {{ page.contact_selfcheck }} (<a href="mailto:{{ page.email_selfcheck }}">{{ page.email_selfcheck }}</a>)
+          {% endif %}
+          
+          {{ page.contact }} ({{ emails | join: ", " }})
+      
+          {{ page.hello }}
+          {{ content }}
+         
         </div>
 
       </div>

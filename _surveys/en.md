@@ -31,7 +31,7 @@ take_challenge: Take the Smell & Taste Challenge
 challenge_url: http://riech-check.de/
 contact_challenge: For more information about our Smell & Taste Challenge, please contact Kathrin Ohla
 email_challenge: info@riech-check.de
-table_instructions: Thank you for your interest in participating. We have four studies you may participate in.  To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer on each icon to read a description.  After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
+table_instructions: Thank you for your interest in participating. We have four studies you may participate in. <br/>To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer over each icon to read a description.<br/> After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
 survey_table:
   columns: ["", "Focus", "How long?", "How often?", "What do I need?"]
   rows:

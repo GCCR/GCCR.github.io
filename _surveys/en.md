@@ -23,13 +23,19 @@ selfcheck_choices: [
 ]
 contact_selfcheck: For more information about our Smell & Taste Self Check, please contact Kathrin Ohla
 email_selfcheck: info@riech-check.de
+take_tracker: Take the Recovery Tracker
 tracker_url: https://redcap.ctsi.psu.edu/surveys/?s=3N87PWN7CP
 contact_tracker: For more information about our Recovery Tracker, please contact John Hayes
 email_tracker: jeh40@psu.edu
+take_challenge: Take the Smell & Taste Challenge
 challenge_url: http://riech-check.de/
-contact_challenge: For more information about our Smell & Taste challenge, please contact Kathrin Ohla
+contact_challenge: For more information about our Smell & Taste Challenge, please contact Kathrin Ohla
 email_challenge: info@riech-check.de
-table_instructions: Thank you for your interest in participating. We have four studies you may participate in. To help you choose, please take a look at what fits your interests in the table below. After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
+table_instructions: Thank you for your interest in participating. We have four studies you may participate in. 
+
+To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer on each icon to read a description. 
+
+After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
 survey_table:
   columns: ["", "Focus", "How long?", "How often?", "What do I need?"]
   rows:

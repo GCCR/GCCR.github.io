@@ -31,7 +31,6 @@ take_challenge: Take the Smell & Taste Challenge
 challenge_url: http://riech-check.de/
 contact_challenge: For more information about our Smell & Taste Challenge, please contact Kathrin Ohla
 email_challenge: info@riech-check.de
-table_instructions: Thank you for your interest in participating. We have four studies you may participate in.<br/> <br/>To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer over each icon to read a description.<br/> <br/> After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study."
 survey_table:
   columns: ["", "Focus", "How long?", "How often?", "What do I need?"]
   rows:
@@ -39,6 +38,15 @@ survey_table:
     check: Smell & Taste Self Check
     survey: GCCR Survey
     tracker: Recovery Tracker
+  instructions: |
+    Thank you for your interest in participating. We have four studies you may participate in.<br/>
+    To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer over each icon to read a description.<br/>
+    After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
+  tooltips:
+    challenge: ["Awareness", "Under 5 min", "Daily", "Your own device and a beverage"]
+    tracker: ["Change over time", "15-20 min", "Weekly for 7 weeks, and 2 follow-ups later", "Your own device and regular household items"]
+    check: ["Loss", "30 min", "Once or more at your own pace", "Your own  device and regular household items"]
+    survey: ["Overall symptoms", "15 min", "Once", "Your own  device"]
 ---
 The GCCR is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic.
 

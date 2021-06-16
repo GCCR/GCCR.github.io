@@ -24,12 +24,14 @@ layout: survey-base
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
         <br/> 
         <div class="text-center">
-            <div style="display: inline-block; text-align: left;">{{ page.table_instructions }}</div>
         
         {% if page.survey_table %}
+
+        <p class="text-left big-line-breaks">{{ page.survey_table.instructions }}</p>
+
         <!-- Table with icons -->
-        <div class="text-center">
-          <table class="survey-table">
+        <div class="text-center align-middle">
+          <table class="survey-table table-responsive-sm">
             <tr>
               {% for col in page.survey_table.columns %}
               <th>{{ col }}</th>
@@ -37,31 +39,31 @@ layout: survey-base
             </tr>
             <tr>
               <td><a href="{{ page.challenge_url }}">{{ page.survey_table.rows.challenge }}</a></td>
-              <td><img src="/assets/img/survey-icons/focus_challenge.png" alt="alternative text" title="awareness"></td>
-              <td><img src="/assets/img/survey-icons/clock_challenge.png" alt="alternative text" title="under 5 min"></td>
-              <td><img src="/assets/img/survey-icons/calendar_challenge.png" alt="alternative text" title="daily"></td>
-              <td><img src="/assets/img/survey-icons/items_challenge_combined.png" alt="alternative text" title="your own  device and a beverage"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_challenge.png" alt="{{ page.survey_table.tooltips.challenge[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_challenge.png" alt="{{ page.survey_table.tooltips.challenge[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_challenge.png" alt="{{ page.survey_table.tooltips.challenge[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_challenge_combined.png" alt="{{ page.survey_table.tooltips.challenge[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[3] }}"></td>
             </tr>
             <tr>
               <td><a href="{{ page.tracker_url }}">{{ page.survey_table.rows.tracker }}</a></td>
-              <td><img src="/assets/img/survey-icons/focus_tracker.png" alt="alternative text" title="change over time"></td>
-              <td><img src="/assets/img/survey-icons/clock_tracker.png" alt="alternative text" title="15-20 min"></td>
-              <td><img src="/assets/img/survey-icons/calendar_tracker.png" alt="alternative text" title="weekly for 7 weeks, and 2 follow-ups later"></td>
-              <td><img src="/assets/img/survey-icons/items_tracker_combined.png" alt="alternative text" title="your own device and regular household items"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_tracker.png" alt="{{ page.survey_table.tooltips.tracker[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_tracker.png" alt="{{ page.survey_table.tooltips.tracker[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_tracker.png" alt="{{ page.survey_table.tooltips.tracker[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_tracker_combined.png" alt="{{ page.survey_table.tooltips.tracker[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[3] }}"></td>
             </tr>
             <tr>
               <td><a href="{{ page.selfcheck_url }}">{{ page.survey_table.rows.check }}</a></td>
-              <td><img src="/assets/img/survey-icons/focus_check.png" alt="alternative text" title="loss"></td>
-              <td><img src="/assets/img/survey-icons/clock_check.png" alt="alternative text" title="30 min"></td>
-              <td><img src="/assets/img/survey-icons/calendar_check.png" alt="alternative text" title="once or more at your own pace"></td>
-              <td><img src="/assets/img/survey-icons/items_check_combined.png" alt="alternative text" title="your own  device and regular household items"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_check.png" alt="{{ page.survey_table.tooltips.check[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_check.png" alt="{{ page.survey_table.tooltips.check[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_check.png" alt="{{ page.survey_table.tooltips.check[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_check_combined.png" alt="{{ page.survey_table.tooltips.check[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[3] }}"></td>
             </tr>
             <tr>
               <td><a href="{{ page.survey_url }}">{{ page.survey_table.rows.survey }}</a></td>
-              <td><img src="/assets/img/survey-icons/focus_survey.png" alt="alternative text" title="overall symptoms"></td>
-              <td><img src="/assets/img/survey-icons/clock_survey.png" alt="alternative text" title="15 min"></td>
-              <td><img src="/assets/img/survey-icons/calendar_survey.png" alt="alternative text" title="once"></td>
-              <td><img src="/assets/img/survey-icons/items_survey.png" alt="alternative text" title="your own  device"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_survey.png" alt="{{ page.survey_table.tooltips.survey[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_survey.png" alt="{{ page.survey_table.tooltips.survey[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_survey.png" alt="{{ page.survey_table.tooltips.survey[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_survey.png" alt="{{ page.survey_table.tooltips.survey[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[3] }}"></td>
             </tr>
           </table>
         </div>
@@ -196,3 +198,9 @@ layout: survey-base
 
 <!-- Empty section for spacing -->
 <div style="height: 10em;"></div>
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>

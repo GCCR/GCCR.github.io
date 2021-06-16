@@ -4,6 +4,11 @@
 .partners-logo {
   max-width: 180px;
 }
+.big-line-breaks br {
+  display: block;
+  margin-top: 15px;
+  content: " ";
+}
 // literature page
 .color-covid19 {background-color: #f78686;}
 .color-viral {background-color: #ffd175;}
@@ -15,4 +20,7 @@
 // survey table
 .survey-table {margin: 0 auto;}
 .survey-table td {padding: 5px 20px;}
+@media (max-width: 768px) {
+  .survey-table td {padding: 5px;}
+}
 .survey-table img {width: 64px;}

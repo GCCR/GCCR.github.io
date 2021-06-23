@@ -22,8 +22,53 @@ layout: survey-base
         <hr/>
           
         <h2 class="section-heading text-uppercase py-5">{{ page.description }}</h2>
+        <br/> 
+        <div class="text-center">
         
-        {% if page.take_selfcheck %}
+        {% if page.survey_table %}
+
+        <p class="text-left big-line-breaks">{{ page.survey_table.instructions }}</p>
+
+        <!-- Table with icons -->
+        <div class="text-center align-middle">
+          <table class="survey-table table-responsive-sm">
+            <tr>
+              {% for col in page.survey_table.columns %}
+              <th>{{ col }}</th>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td><a href="{{ page.challenge_url }}">{{ page.survey_table.rows.challenge }}</a></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_challenge.png" alt="{{ page.survey_table.tooltips.challenge[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_challenge.png" alt="{{ page.survey_table.tooltips.challenge[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_challenge.png" alt="{{ page.survey_table.tooltips.challenge[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_challenge_combined.png" alt="{{ page.survey_table.tooltips.challenge[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.challenge[3] }}"></td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.tracker_url }}">{{ page.survey_table.rows.tracker }}</a></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_tracker.png" alt="{{ page.survey_table.tooltips.tracker[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_tracker.png" alt="{{ page.survey_table.tooltips.tracker[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_tracker.png" alt="{{ page.survey_table.tooltips.tracker[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_tracker_combined.png" alt="{{ page.survey_table.tooltips.tracker[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.tracker[3] }}"></td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.selfcheck_url }}">{{ page.survey_table.rows.check }}</a></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_check.png" alt="{{ page.survey_table.tooltips.check[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_check.png" alt="{{ page.survey_table.tooltips.check[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_check.png" alt="{{ page.survey_table.tooltips.check[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_check_combined.png" alt="{{ page.survey_table.tooltips.check[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[3] }}"></td>
+            </tr>
+            <tr>
+              <td><a href="{{ page.survey_url }}">{{ page.survey_table.rows.survey }}</a></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_survey.png" alt="{{ page.survey_table.tooltips.survey[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[0] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_survey.png" alt="{{ page.survey_table.tooltips.survey[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[1] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_survey.png" alt="{{ page.survey_table.tooltips.survey[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[2] }}"></td>
+              <td><img class="img-fluid" src="/assets/img/survey-icons/items_survey.png" alt="{{ page.survey_table.tooltips.survey[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[3] }}"></td>
+            </tr>
+          </table>
+        </div>
+        
+        {% elsif page.take_selfcheck %}
         <!-- MCQ that takes users to the right tool -->
         
         <div class="text-center">
@@ -105,23 +150,42 @@ layout: survey-base
         <script src="/assets/js/mcq-tool.js"></script>
 
         {% else %}
+        <!-- First survey -->
         <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
 
         {% endif %}
 
+        <!-- Share buttons -->
         {% include share-survey.html %}
 
         <div class="w-100 pt-1 pb-5"></div>
         
+        <!-- Description -->
         <div class="text-left">
-          {{ page.hello }}
-          {{ content }}
+      
           
-          {{ page.contact }} ({{ emails | join: ", " }})
+          {% if page.take_challenge %}
+          <br/> 
+          {{ page.contact_challenge }} (<a href="mailto:{{ page.email_challenge }}">{{ page.email_challenge}}</a>)
+          {% endif %}
+          
+           {% if page.take_tracker %}
+          <br/> 
+          {{ page.contact_tracker }} (<a href="mailto:{{ page.email_tracker }}">{{ page.email_tracker}}</a>)
+          {% endif %}
+          
           {% if page.take_selfcheck %}
           <br/> 
           {{ page.contact_selfcheck }} (<a href="mailto:{{ page.email_selfcheck }}">{{ page.email_selfcheck }}</a>)
           {% endif %}
+          <br/> 
+          {{ page.contact }} ({{ emails | join: ", " }})
+          <br />
+          <br />
+          
+          {{ page.hello }}
+          {{ content }}
+         
         </div>
 
       </div>
@@ -134,3 +198,9 @@ layout: survey-base
 
 <!-- Empty section for spacing -->
 <div style="height: 10em;"></div>
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>

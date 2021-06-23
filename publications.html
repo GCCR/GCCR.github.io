@@ -1,0 +1,66 @@
+---
+title: Publications
+description: GCCR Publications 
+sitemap:
+  priority: 0.8
+---
+<!-- Created by KWC on 210606 -->
+<!-- Data derived from the pubs.yml file -->
+
+<!-- Publications -->
+<section class="page-section" id="intro">
+    <div class="container">
+         
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+          <h2 class="section-heading text-uppercase text-center">GCCR Publications</h2>
+            
+            {% for pubitem in site.data.pubs %}
+            <div class="container">
+                <div class="row">
+<!--                <div class="col-lg-12 col-md-12 col-sm-12"> -->
+                <!-- Paper icon (css in main.scss) -->
+                
+                <div class="col-lg-4 col-md-5 col-sm-12"> 
+                    <a href="{{ pubitem.link }}" target="_blank">
+                    <img class="img-fluid publication-img" src="{{ pubitem.imageloc }}" alt="{{ pubitem.title }}">
+                    </a>
+                </div>
+                <!-- Paper Data -->
+                <div class="col-lg-8 col-md-7 col-sm-12"> 
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab{{ pubitem.webID }}" data-toggle="tab" href="#nav-home{{ pubitem.webID }}" role="tab" aria-controls="nav-home{{ pubitem.webID }}" aria-selected="true">Info</a>
+                        <a class="nav-link" id="nav-profile-tab{{ pubitem.webID }}" data-toggle="tab" href="#nav-profile{{ pubitem.webID }}" role="tab" aria-controls="nav-profile{{ pubitem.webID }}" aria-selected="false">Abstract</a>
+                        <a class="nav-link" id="nav-contact-tab{{ pubitem.webID }}" data-toggle="tab" href="#nav-contact{{ pubitem.webID }}" role="tab" aria-controls="nav-contact{{ pubitem.webID }}" aria-selected="false">Resources</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home{{ pubitem.webID }}" role="tabpanel" aria-labelledby="nav-home-tab{{ pubitem.webID }}">
+                          <br>
+                          <p><b> {{ pubitem.title }}</b></p>
+                          <p><i>{{ pubitem.yearPublished }} {{ pubitem.journal }}</i></p>
+                          <p> <a href="{{ pubitem.link}}" target="_blank"> Paper link </a>
+                      </div>
+                      <div class="tab-pane fade" id="nav-profile{{ pubitem.webID }}" role="tabpanel" aria-labelledby="nav-profile-tab{{ pubitem.webID }}">
+                      <p> {{ pubitem.abstract }} </p>  
+                      
+                      </div>
+                      <div class="tab-pane fade" id="nav-contact{{ pubitem.webID }}" role="tabpanel" aria-labelledby="nav-contact-tab{{ pubitem.webID }}">
+                      <br>
+                      <p> Data and code avaliable <a href="{{ pubitem.materials }}" target="_blank">here</a>
+                      </div>
+                    </div>
+
+<!--                </div>-->
+                </div>
+            
+            </div>
+            <br>
+            </div>
+            {% endfor %}
+
+          
+      </div>
+  </div>
+</section>
+<!--<script src="/assets/js/literature.js"></script>-->

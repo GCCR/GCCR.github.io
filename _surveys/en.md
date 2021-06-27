@@ -24,7 +24,7 @@ selfcheck_choices: [
 contact_selfcheck: For more information about our Smell & Taste Self Check, please contact Kathrin Ohla
 email_selfcheck: info@riech-check.de
 take_tracker: Take the Recovery Tracker
-tracker_url: https://redcap.ctsi.psu.edu/surveys/?s=3N87PWN7CP
+tracker_url: https://redcap.ctsi.psu.edu/surveys/?s=A7L73MHDAT
 contact_tracker: For more information about our Recovery Tracker, please contact John Hayes
 email_tracker: jeh40@psu.edu
 take_challenge: Take the Smell & Taste Challenge

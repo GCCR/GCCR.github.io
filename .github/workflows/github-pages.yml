@@ -54,5 +54,7 @@ jobs:
       run: python _scripts/make_committees_data.py
     - name: Build and deploy
       uses: helaili/jekyll-action@2.0.1
+      with:
+        target_branch: 'gh-pages'
       env:
         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}

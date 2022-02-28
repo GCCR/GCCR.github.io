@@ -61,3 +61,4 @@ I heavily suggest that you quickly go through [Jekyll's tutorial](https://jekyll
 * `assets` folder: all images, javascript resources, css stylesheets...*etc*. are located here
 * `news` folder: contains the front page for the blog/news section.
 * `_config.yml` file: the configuration file read by Jekyll. This is where you configure the default layouts used by each page, permalinks, plugins for SEO...*etc*. You can access the value of any variable in this file through `{{ site.my_variable }}` in your HTML code.
+

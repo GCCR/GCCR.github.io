@@ -17,8 +17,12 @@
     {% assign lang = survey.lang | default: 'en_US' %}
     {% assign url = survey.url | default: survey.survey_url %}
     <div class="col-sm-6 col-md-4 col-lg-4">
-        <a lang="{{ lang }}" href="{{ url }}" class="{{ btn_class }} text-uppercase" type="submit">{{ survey.title }}</a>
-        <div class="w-100 pb-1"></div>
+    {% if survey.selfcheck_url %}
+      <a lang="{{ lang }}" href="{{ url }}" class="{{ btn_class }} text-uppercase" type="submit">{{ survey.title }}</a>
+    {% else %}
+      <a lang="{{ lang }}" class="{{ btn_class | replace: 'btn-primary', 'btn-secondary' }} disabled text-uppercase">{{ survey.title }}</a>
+    {% endif %}
+      <div class="w-100 pb-1"></div>
     </div>
   {% endfor %}
   </div>

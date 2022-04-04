@@ -4,9 +4,6 @@ layout: survey-base
 {% if "Arabic Hebrew Persian Urdu" contains page.language %}
   {% assign text_dir = 'dir="rtl"' %}
 {% endif %}
-{% assign emails_list = page.leader_email | split: " " %}
-{% capture emails %}{% for mail in emails_list %}<a href="mailto:{{ mail }}">{{ mail }}</a>,{% endfor %}{% endcapture %}
-{% assign emails = emails | split: "," %}
 
 <!-- Survey box -->
 <section class="page-section" id="intro">
@@ -51,100 +48,20 @@ layout: survey-base
               <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_check.png" alt="{{ page.survey_table.tooltips.check[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[2] }}"></td>
               <td><img class="img-fluid" src="/assets/img/survey-icons/items_check_combined.png" alt="{{ page.survey_table.tooltips.check[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.check[3] }}"></td>
             </tr>
-            <tr>
-              <td><a href="{{ page.survey_url }}">{{ page.survey_table.rows.survey }}</a></td>
-              <td><img class="img-fluid" src="/assets/img/survey-icons/focus_survey.png" alt="{{ page.survey_table.tooltips.survey[0] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[0] }}"></td>
-              <td><img class="img-fluid" src="/assets/img/survey-icons/clock_survey.png" alt="{{ page.survey_table.tooltips.survey[1] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[1] }}"></td>
-              <td><img class="img-fluid" src="/assets/img/survey-icons/calendar_survey.png" alt="{{ page.survey_table.tooltips.survey[2] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[2] }}"></td>
-              <td><img class="img-fluid" src="/assets/img/survey-icons/items_survey.png" alt="{{ page.survey_table.tooltips.survey[3] }}" data-toggle="popover" data-trigger="hover" data-content="{{ page.survey_table.tooltips.survey[3] }}"></td>
-            </tr>
           </table>
         </div>
+
+        {% elsif page.selfcheck_url %}
         
-        {% elsif page.take_selfcheck %}
-        <!-- MCQ that takes users to the right tool -->
-        
-        <div class="text-center">
-            <div style="display: inline-block; text-align: left;">
-
-              {% for choice in page.selfcheck_choices %}
-              <div class="form-check">
-                <input class="form-check-input mcq-tools" type="radio" name="mcq-tools" value="option{{ forloop.index}}" id="mcq-tools-{{ forloop.index}}">
-                <label class="form-check-label" for="mcq-tools-{{ forloop.index}}">
-                  {{ choice }}
-                </label>
-              </div>
-              {% endfor %}
-
-            </div>
-        </div>
-
-        <div style="height: 5em;"></div>
-
-        <!-- Modal survey -->
-        <div class="modal fade" id="ModalSurvey" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalSurveyTitle">{{ page.description }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                {{ page.selfcheck_response }}
-                <hr/>
-                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal self-check -->
-        <div class="modal fade" id="ModalSelfCheck" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalSelfCheckTitle">{{ page.description }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                {{ page.selfcheck_response }}
-                <hr/>
-                <a href="{{ page.selfcheck_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_selfcheck }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal both -->
-        <div class="modal fade" id="ModalBoth" tabindex="-1" role="dialog" aria-labelledby="modal title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalBothTitle">{{ page.description }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                {{ page.selfcheck_response }}
-                <hr/>
-                <a href="{{ page.selfcheck_url }}" class=" btn btn-lg btn-primary text-uppercase" target="_blank">{{ page.take_selfcheck }}</a>
-                <a href="{{ page.survey_url }}" class=" btn btn-lg btn-primary text-uppercase mt-1" target="_blank">{{ page.take_survey }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Logic behind the mcq tool -->
-        <script src="/assets/js/mcq-tool.js"></script>
+        <!-- self-check -->
+        <a href="{{ page.selfcheck_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_selfcheck }}</a>
 
         {% else %}
-        <!-- First survey -->
-        <a href="{{ page.survey_url }}" class="col-lg-6 btn btn-xl btn-primary text-uppercase" target="_blank">{{ page.take_survey }}</a>
+
+        <h2 class="h2">❌ ERROR 404 ❌</h2>
+        <script>
+          window.location.replace("/surveys/");
+        </script>
 
         {% endif %}
 
@@ -171,9 +88,7 @@ layout: survey-base
           <br/> 
           {{ page.contact_selfcheck }} (<a href="mailto:{{ page.email_selfcheck }}">{{ page.email_selfcheck }}</a>)
           {% endif %}
-          <br/> 
-          {{ page.contact }} ({{ emails | join: ", " }})
-          <br />
+          <br/>
           <br />
           
           {{ page.hello }}

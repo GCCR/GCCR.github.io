@@ -4,7 +4,7 @@ GEM
     activesupport (6.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
+      minitest (~> 4.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.0)

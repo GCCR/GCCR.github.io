@@ -18,28 +18,22 @@ jobs:
       run: |
         sudo apt-get update -y
         sudo apt-get install -y firefox
+
     - name: Clone GitHub repo
       uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8.5
-    - name: Cache pip
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
-    - name: Install Python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r _scripts/requirements.txt
+
+    - name: Install Conda environment with Micromamba
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: _scripts/environment.yml
+          environment-name: gccr
+          cache-env: true
+
     - name: Run Zotero script
       env:
         ZOTERO_KEY: ${{ secrets.ZOTERO_KEY }}
       run: python _scripts/zotero_to_yml.py
+
     - name: Build members map and list
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -47,14 +41,15 @@ jobs:
       run: |
         mkdir -p assets/data
         python _scripts/make_members_data.py
+
     - name: Build committees section
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         COMMITTEES_SPREADSHEET_ID: ${{ secrets.COMMITTEES_SPREADSHEET_ID }}
       run: python _scripts/make_committees_data.py
+
     - name: Build and deploy
       uses: helaili/jekyll-action@v2
       with:
         target_branch: 'gh-pages'
         token: ${{ secrets.JEKYLL_PAT }}
-

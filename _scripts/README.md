@@ -16,9 +16,7 @@ Make sure conda is available in your terminal by running the following command: 
 Now we will install all the necessary packages in a separate environment called `gccr`. In your terminal, run the following commands:
 
 ```bash
- conda create -n gccr python=3.8.5 --yes
- conda activate gccr
- pip install -r _scripts/requirements.txt
+ conda env create -n gccr -f _scripts/environment.yml
 ```
 This will download all the packages in a specific version and install them in the `gccr` conda environment.
 

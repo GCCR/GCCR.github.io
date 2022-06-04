@@ -21,24 +21,23 @@ bundle update --bundler
 2. **Cloning the repository**
 ```shell
 git clone https://github.com/GCCR/GCCR.github.io.git
-git checkout dev
+cd GCCR.github.io
 ```
-There are two branches on this repo: the `master` branch which is used to build the website.
+The `master` branch is used to build the website.
 Modifications on this branch will directly affect the website so push commits on this branch only after testing them locally.
 
-The `dev` branch. When making big changes, you should push your commits to this branch first, and then merge it with the master branch.
+When making big changes, you should push your commits to a new branch, then open a pull-request so that it can be reviewed by others. Once approved, your branch will be merged with the master branch which will automatically trigger an update of the website.
 
-* To switch between branches, use the `git checkout` command. 
-* To identify which branch you're working on, use `git branch`. 
-* To push your changes from `dev` to remote (GitHub) `dev` branch, use `git push -u origin dev`. 
-
-Then the admin's will merge `dev` to `master` through the GitHub interface.
+A few reminders about `git`:
+* To identify which branch you're working on, use `git branch`.
+* To switch between branches, use the `git checkout` command.
+* If you realize too late that you've started working on the `master` branch instead of a new branch, you can move your changes to a new branch with the `git switch -c my-new-branch` command. 
+* To push your changes from a branch `new-branch` to GitHub, use `git push -u origin new-branch`. 
 
 3. **Running the website locally**
 
 You'll need to install a few plugins first
 ```shell
-cd GCCR.github.io
 bundle install
 ```
 

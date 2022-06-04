@@ -35,7 +35,7 @@ def country_reader(path):
 details = country_reader("ne_50m_admin_0_sovereignty.shp")
 geo = country_reader("ne_110m_admin_0_sovereignty.shp")
 missing = details.loc[~details["Country"].isin(geo["Country"])]
-geo = geo.append(missing)
+geo = pd.concat([geo, missing])
 geo.reset_index(inplace=True, drop=True)
 
 # drop Antarctica

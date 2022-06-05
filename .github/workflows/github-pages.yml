@@ -28,6 +28,9 @@ jobs:
         environment-file: _scripts/environment.yml
         environment-name: gccr
         cache-env: true
+    
+    - name: Show env
+      run: conda env export --name gccr
 
     - name: Run Zotero script
       env:

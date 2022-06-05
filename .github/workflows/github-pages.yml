@@ -1,5 +1,9 @@
 name: Build and deploy Jekyll site to GitHub Pages
 
+defaults:
+  run:
+    shell: bash -l {0}
+
 on:
   push:
     branches:
@@ -28,9 +32,6 @@ jobs:
         environment-file: _scripts/environment.yml
         environment-name: gccr
         cache-env: true
-    
-    - name: Show env
-      run: conda env export --name gccr
 
     - name: Run Zotero script
       env:

@@ -27,18 +27,21 @@ take_challenge: Take the Smell & Taste Challenge
 challenge_url: http://riech-check.de/
 contact_challenge: For more information about our Smell & Taste Challenge, please contact Kathrin Ohla
 email_challenge: info@riech-check.de
+vaccination_url: https://iu.co1.qualtrics.com/jfe/form/SV_1G1RDda8fcCJHCe
 survey_table:
   columns: ["", "Focus", "How long?", "How often?", "What do I need?"]
   rows:
     challenge: Smell & Taste Challenge
     check: Smell & Taste Self Check
+    vaccination: COVID-19 Vaccination
   instructions: |
-    Thank you for your interest in participating. We have two studies you may participate in.<br/>
+    Thank you for your interest in participating. We have several studies you may participate in.<br/>
     To help you choose, please take a look at what fits your interests in the table below. Hover with your pointer over each icon to read a description.<br/>
     After clicking one of the links in the left column you will be able to read more detailed information about the study and whether you may qualify to participate in the study.
   tooltips:
     challenge: ["Awareness", "Under 5 min", "Daily", "Your own device and a beverage"]
     check: ["Loss", "30 min", "Once or more at your own pace", "Your own  device and regular household items"]
+    vaccination: ["Long-COVID symptoms", "Under 10 min", "Once", "Your own device and COVID-19 vaccination records"]
 ---
 The GCCR is a group of 600 scientists, clinicians, and patient advocates across 50 countries founded in response to the COVID-19 pandemic.
 

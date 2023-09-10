@@ -1,0 +1,88 @@
+---
+title: Clinical DB
+description: A DESCRIPTION YAYAYAYAYAYAYAY
+sitemap:
+  priority: 0.8
+---
+<section class="page-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Clinical Database</h2>
+        <h3 class="section-subheading text-muted">Connecting patients with the clinicians they need: globally</h3>
+          
+        <iframe height="800" width="100%" frameborder="no" src="https://8730yf-daniel-hwang.shinyapps.io/Global_Clinic_Map/"> </iframe>
+<!-- 
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Committees
+                  </button>
+                </h2>
+              </div> -->
+
+              <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  {% for item in site.data.committees %}
+                    <div class="mt-4 text-left">
+                      <h3 class="">{{ item.committee }}</h3>
+                      {% for item in item.listing %}
+                        <h4 class="h4">{{ item.time }}</h4>
+                        <div class="d-flex text-left">
+                          <p class="text-muted">
+                            {{ item.members | join: ", " }}
+                          </p>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}
+                </div> 
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Our Members
+                    </button>
+                </h2>
+              </div>
+                
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+
+                  <div class="row">  
+                    <table class="table table-hover text-left">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Institution</th>
+                          <th>Country</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for item in site.data.members %}
+                        <tr>
+                          {% if item.url %}
+                          <td><a href="{{ item.url }}">{{ item.name }}</a></td>
+                          {% else %}
+                          <td>{{ item.name }}</td>
+                          {% endif %}
+                          <td>{{ item.institution }}</td><td>{{ item.country }}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+         
+      </div>
+    </div>
+  </div>
+</section>
